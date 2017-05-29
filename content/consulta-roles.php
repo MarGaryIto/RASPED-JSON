@@ -1,4 +1,5 @@
 <?php
+  require_one 'mysql-login.php';
   $query = "SELECT * FROM Roles";
   print("<table>");
   $resultado = $con->query($query); 
