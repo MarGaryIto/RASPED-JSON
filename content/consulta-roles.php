@@ -1,6 +1,7 @@
 <?php
   require_one 'mysql-login.php';
   $query = "SELECT * FROM Roles";
+  $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
   print("<table>");
   $resultado = $con->query($query); 
   foreach ( $resultado as $rows) { 
