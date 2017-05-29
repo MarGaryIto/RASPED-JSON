@@ -1,12 +1,14 @@
 <?php
-//MySQLi
+//conexion por MySQL PDO
 require_once 'mysql-login.php';
-$mysqli = new mysqli($hostname, $username,$password, $database);
-if ($mysqli -> connect_errno) {
-die( "Fallo la conexión a MySQL: (" . $mysqli -> mysqli_connect_errno() 
-. ") " . $mysqli -> mysqli_connect_error());
-}
-else
-echo "Conexión exitosa!";
-$mysqli -> mysqli_close();
+  try {
+    $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
+    print "Conexión exitosa!";
+  }
+  catch (PDOException $e) {
+    print "¡Error!: " . $e->getMessage() . "
+    ";
+    die();
+  }
+  $con = null;
 ?>
