@@ -21,7 +21,7 @@
         ";
         die();
       }
-      $con =null;
+      //$con =null;
     ?>
     <div class="container">
       <button onClick="window.location.href='#'>boton</button>
