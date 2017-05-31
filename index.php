@@ -9,7 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <div>
+    <div class="container">
     <?php
       //conexion por MySQL PDO
       require_once 'content/mysql-login.php';
@@ -17,9 +17,9 @@
         $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
         print "Conexión exitosa!";
      ?>
-        <button onclick="window.location.href='#'" class="btn btn-default btn-block">
-          <h3>boton</h3>
-        </button>"
+        <button onclick="window.location.href='content/consulta-roles.php'" class="btn btn-default btn-block">
+          <h3>todos los puestos</h3>
+        </button>
       <?php
       }
         catch (PDOException $e) {
