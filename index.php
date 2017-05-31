@@ -9,22 +9,26 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
+    <div>
     <?php
       //conexion por MySQL PDO
       require_once 'content/mysql-login.php';
       try {
         $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
         print "Conexión exitosa!";
+     ?>
+        <button onclick="window.location.href='#'" class="btn btn-default btn-block">
+          <h3>boton</h3>
+        </button>"
+      <?php
       }
         catch (PDOException $e) {
         print "¡Error!: " . $e->getMessage() . "
         ";
         die();
       }
-      //$con =null;
+      $con =null;
     ?>
-    <div class="container">
-      <button onClick="window.location.href='#'>boton</button>
     </div>
   </body>
 </html>
