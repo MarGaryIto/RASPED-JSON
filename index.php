@@ -42,7 +42,7 @@ array_push($convertToJson, $rowArray);
 }
 print json_encode($convertToJson);
 
-$listaEmpleos = "json/listaEmpleos.json";
+/*$listaEmpleos = "json/listaEmpleos.json";
 
 $data = json_encode($convertToJson); 
 
@@ -50,7 +50,7 @@ if ($fp = fopen($listaEmpleos, "w"))
 {
 fwrite($fp, $data);
 }
-fclose($fp);
+fclose($fp);*/
 
 mysql_close($conexion) 
 
