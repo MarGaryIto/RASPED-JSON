@@ -4,9 +4,9 @@
  * Representa el la estructura de las metas
  * almacenadas en la base de datos
  */
-require 'Database.php';
+require 'database.php';
 
-class Meta
+class roles
 {
     function __construct()
     {
@@ -20,7 +20,7 @@ class Meta
      */
     public static function getAll()
     {
-        $consulta = "SELECT * FROM meta";
+        $consulta = "SELECT * FROM Roles";
         try {
             // Preparar sentencia
             $comando = Database::getInstance()->getDb()->prepare($consulta);
@@ -41,23 +41,19 @@ class Meta
      * @param $idMeta Identificador de la meta
      * @return mixed
      */
-    public static function getById($idMeta)
+    public static function getById($id_rol)
     {
         // Consulta de la meta
-        $consulta = "SELECT idMeta,
-                            titulo,
-                             descripcion,
-                             prioridad,
-                             fechaLim,
-                             categoria
-                             FROM meta
-                             WHERE idMeta = ?";
+        $consulta = "SELECT id_rol,
+                            nombre_rol,
+                            FROM Roles
+                            WHERE id_rol = ?";
 
         try {
             // Preparar sentencia
             $comando = Database::getInstance()->getDb()->prepare($consulta);
             // Ejecutar sentencia preparada
-            $comando->execute(array($idMeta));
+            $comando->execute(array($id_rol));
             // Capturar primera fila del resultado
             $row = $comando->fetch(PDO::FETCH_ASSOC);
             return $row;
@@ -81,24 +77,20 @@ class Meta
      * @param $prioridad   nueva prioridad
      */
     public static function update(
-        $idMeta,
-        $titulo,
-        $descripcion,
-        $fechaLim,
-        $categoria,
-        $prioridad
+        $id_rol,
+        $nombre_rol
     )
     {
         // Creando consulta UPDATE
-        $consulta = "UPDATE meta" .
-            " SET titulo=?, descripcion=?, fechaLim=?, categoria=?, prioridad=? " .
-            "WHERE idMeta=?";
+        $consulta = "UPDATE Roles" .
+            " SET nombre_rol=? " .
+            "WHERE id_rol=?";
 
         // Preparar la sentencia
         $cmd = Database::getInstance()->getDb()->prepare($consulta);
 
         // Relacionar y ejecutar la sentencia
-        $cmd->execute(array($titulo, $descripcion, $fechaLim, $categoria, $prioridad, $idMeta));
+        $cmd->execute(array($nombre_rol, $id_rol));
 
         return $cmd;
     }
@@ -114,32 +106,21 @@ class Meta
      * @return PDOStatement
      */
     public static function insert(
-        $titulo,
-        $descripcion,
-        $fechaLim,
-        $categoria,
-        $prioridad
+        $id_rol,
+        $nombre_rol
     )
     {
         // Sentencia INSERT
-        $comando = "INSERT INTO meta ( " .
-            "titulo," .
-            " descripcion," .
-            " fechaLim," .
-            " categoria," .
-            " prioridad)" .
-            " VALUES( ?,?,?,?,?)";
+        $comando = "INSERT INTO Roles ( " .
+            " nombre_rol," .
+            " VALUES( ?)";
 
         // Preparar la sentencia
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
 
         return $sentencia->execute(
             array(
-                $titulo,
-                $descripcion,
-                $fechaLim,
-                $categoria,
-                $prioridad
+                $nombre_rol
             )
         );
 
@@ -151,15 +132,15 @@ class Meta
      * @param $idMeta identificador de la meta
      * @return bool Respuesta de la eliminación
      */
-    public static function delete($idMeta)
+    public static function delete($id_rol)
     {
         // Sentencia DELETE
-        $comando = "DELETE FROM meta WHERE idMeta=?";
+        $comando = "DELETE FROM Roles WHERE id_rol=?";
 
         // Preparar la sentencia
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
 
-        return $sentencia->execute(array($idMeta));
+        return $sentencia->execute(array($id_rol));
     }
 }
 
