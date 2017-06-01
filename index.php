@@ -34,7 +34,7 @@
 
         $data = json_encode($convertToJson);
         
-        echo $data
+        echo ("$data = ");
 
         /* ($fp = fopen($listaEmpleos, "w"))
         {
