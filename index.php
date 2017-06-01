@@ -9,26 +9,18 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
+    <div class="container">
     <?php
       //conexion por MySQL PDO
       require_once 'content/mysql-login.php';
       try {
-        $DBcon = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
-        $DBcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
         print "Conexión exitosa!";
-        $query = "SELECT * FROM areas";
- 
-        $stmt = $DBcon->prepare($query);
-        $stmt->execute();
-        
-        $userData = array();
-
-        while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-
-              $userData['id_area'][] = $row;
-
-        }
-        echo json_encode($userData);
+     ?>
+        <button onclick="window.location.href='content/obtener_roles.php'" class="btn btn-default btn-block">
+          <h3>todos los puestos</h3>
+        </button>
+      <?php
       }
         catch (PDOException $e) {
         print "¡Error!: " . $e->getMessage() . "
@@ -37,8 +29,6 @@
       }
       $con =null;
     ?>
-    <div class="container">
-      <button onClick="window.location.href='#'>boton</button>
     </div>
   </body>
 </html>
