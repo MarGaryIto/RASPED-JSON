@@ -40,7 +40,7 @@ $rowArray['area'] = $row['area'];
 array_push($convertToJson, $rowArray);
 
 }
-json_encode($convertToJson);
+print json_encode($convertToJson);
 
 $listaEmpleos = "json/listaEmpleos.json";
 
