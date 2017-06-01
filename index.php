@@ -30,11 +30,13 @@
         }
         json_encode($convertToJson);
 
-        /*$listaEmpleos = "json/listaEmpleos.json";
+        //$listaEmpleos = "json/listaEmpleos.json";
 
-        $data = json_encode($convertToJson); 
+        $data = json_encode($convertToJson);
+        
+        echo $data
 
-        if ($fp = fopen($listaEmpleos, "w"))
+        /* ($fp = fopen($listaEmpleos, "w"))
         {
         fwrite($fp, $data);
         }
