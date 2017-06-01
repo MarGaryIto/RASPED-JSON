@@ -19,7 +19,7 @@
      ?>
       <br/>
         <button onclick="window.location.href='content/obtener_roles.php'" class="btn btn-default btn-block">
-          <h3>todos los puestos</h3>
+          <h3>todos las areas</h3>
         </button>
       <?php
       }
