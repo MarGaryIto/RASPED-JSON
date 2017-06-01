@@ -1,26 +1,48 @@
 <?php
-/**
- * Obtiene todas las metas de la base de datos
- */
 
-require 'roles.php';
+      //conexion por MySQL PDO
+      require_once 'content/mysql-login.php';
+      try {
+        $conexion = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
+        print "Conexión exitosa!";
+      }
+        catch (PDOException $e) {
+        print "¡Error!: " . $e->getMessage() . "
+        ";
+        die();
+      }
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+/*mysql_select_db($database, $conexion); 
 
-    // Manejar petición GET
-    $roles = Roles::getAll();
+$query = mysql_query("SELECT * FROM Roles"); 
 
-    if ($roles) {
+$convertToJson = array();
 
-        $datos["id_rol"] = 1;
-        $datos["nombre_rol"] = $roles;
+while($row = mysql_fetch_array($query, MYSQL_ASSOC))
+{
+$rowArray['id_anuncio'] = $row['id_anuncio'];
 
-        print json_encode($datos);
-    } else {
-        print json_encode(array(
-            "estado" => 2,
-            "mensaje" => "Ha ocurrido un error"
-        ));
-    }
+$rowArray['Titulo'] = $row['Titulo'];
+
+$rowArray['Descripcion'] = $row['Descripcion'];
+
+$rowArray['Requisitos'] = $row['Requisitos']; 
+
+array_push($convertToJson, $rowArray);
+
 }
+json_encode($convertToJson);
+
+$listaEmpleos = "json/listaEmpleos.json";
+
+$data = json_encode($convertToJson); 
+
+if ($fp = fopen($listaEmpleos, "w"))
+{
+fwrite($fp, $data);
+}
+fclose($fp);
+
+mysql_close($conexion) */
+
 ?>
