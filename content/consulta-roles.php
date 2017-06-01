@@ -4,16 +4,14 @@
       try {
         $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
         $query = "SELECT * FROM Roles";
-        print("<table>");
-        $resultado = $con->query($query); 
-        foreach ( $resultado as $rows) { 
-          print("<tr>");
-          print("<td>".$rows["id_rol"]."</td>");
-          print("<td>".$rows["nombre_rol"]."</td>");
-          print("</tr>"); 
+        $result = mysql_query($sql_query);
+        $rows = array();
+        while($r = mysql_fetch_assoc($result)) {
+          $rows[] = $r;
         }
-        print("</table>");
-        $resultado =null;
+        print json_encode($rows); 
+        }
+        $result = null;
       }
         catch (PDOException $e) {
         print "¡Error!: " . $e->getMessage() . "
