@@ -17,7 +17,7 @@
         $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
         print "Conexión exitosa!";
      ?>
-        <button onclick="window.location.href='content/consulta-roles.php'" class="btn btn-default btn-block">
+        <button onclick="window.location.href='content/obtener_roles.php'" class="btn btn-default btn-block">
           <h3>todos los puestos</h3>
         </button>
       <?php
