@@ -15,6 +15,26 @@
       try {
         $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
         print "Conexión exitosa!";
+        //SQL 
+$sql = "SELECT * FROM areas";	
+
+//Enviar la consulta a la BD  usando  query->  (hay otros formas de hacerlo, ver ayuda de PHP)
+$result = $connect->query($sql);
+
+/**
+ * Se crea un array asociativo  de los  resultados usando fecht-> y se almacena en $datos
+ *  Hay otras formas de almacenar el  resultado según las  necesidades...
+ *  Ver ayuda de PHP para  otras variantes de  fetch
+*/ 
+$datos = $result->fetch(PDO::FETCH_ASSOC);
+
+//Se verifica que la consulta  devolvió valores
+if ($result->rowCount() > 0)
+{
+    print_r($datos);
+}else{
+ print_r("No se encontraron datos, verifique su conexión o la consulta enviada");   
+}
       }
         catch (PDOException $e) {
         print "¡Error!: " . $e->getMessage() . "
