@@ -3,17 +3,17 @@
  * Obtiene todas las metas de la base de datos
  */
 
-require 'Meta.php';
+require 'roles.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     // Manejar petición GET
-    $metas = Meta::getAll();
+    $roles = Roles::getAll();
 
-    if ($metas) {
+    if ($roles) {
 
-        $datos["estado"] = 1;
-        $datos["metas"] = $metas;
+        $datos["id_rol"] = 1;
+        $datos["nombre_rol"] = $roles;
 
         print json_encode($datos);
     } else {
