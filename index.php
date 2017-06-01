@@ -1,4 +1,4 @@
-/*<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">*/
+    <div class="container">
     <?php
       require_once 'content/mysql-login.php';
       try {
