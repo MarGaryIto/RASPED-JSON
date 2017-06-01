@@ -11,7 +11,55 @@
   <body>
     <div class="container">
     <?php
-      //conexion por MySQL PDO
+      
+      
+$host_db = "jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306";
+$user_db = "	gcco4yk6co4njuol";
+$pass_db = "lxhp0mnq7iicqc32";
+
+$conexion = mysql_connect($host_db, $user_db, $pass_db);
+
+if (!$conexion)
+
+{
+die('Error: ' . mysql_error());
+}
+
+mysql_select_db("agxe4dwzsdjevn9l", $conexion); 
+
+$query = mysql_query("SELECT * FROM areas"); 
+
+$convertToJson = array();
+
+while($row = mysql_fetch_array($query, MYSQL_ASSOC))
+{
+$rowArray['id_area'] = $row['id_area'];
+
+$rowArray['area'] = $row['area'];
+
+array_push($convertToJson, $rowArray);
+
+}
+json_encode($convertToJson);
+
+$listaEmpleos = "json/listaEmpleos.json";
+
+$data = json_encode($convertToJson); 
+
+if ($fp = fopen($listaEmpleos, "w"))
+{
+fwrite($fp, $data);
+}
+fclose($fp);
+
+mysql_close($conexion) 
+
+      
+      
+      
+      
+      
+      /*conexion por MySQL PDO
       require_once 'content/mysql-login.php';
       try {
         $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
@@ -27,7 +75,7 @@
         ";
         die();
       }
-      $con =null;
+      $con =null;*/
     ?>
     </div>
   </body>
