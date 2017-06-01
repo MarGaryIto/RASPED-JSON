@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
@@ -9,61 +9,31 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
+    <div class="container">*/
     <?php
-      
-      
-$host_db = "jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306";
-$user_db = "	gcco4yk6co4njuol";
-$pass_db = "lxhp0mnq7iicqc32";
-
-$conexion = mysql_connect($host_db, $user_db, $pass_db);
-
-if (!$conexion)
-
-{
-die('Error: ' . mysql_error());
-}
-
-mysql_select_db("agxe4dwzsdjevn9l", $conexion); 
-
-$query = mysql_query("SELECT * FROM areas"); 
-
-$convertToJson = array();
-
-while($row = mysql_fetch_array($query, MYSQL_ASSOC))
-{
-$rowArray['id_area'] = $row['id_area'];
-
-$rowArray['area'] = $row['area'];
-
-array_push($convertToJson, $rowArray);
-
-}
-print json_encode($convertToJson);
-
-/*$listaEmpleos = "json/listaEmpleos.json";
-
-$data = json_encode($convertToJson); 
-
-if ($fp = fopen($listaEmpleos, "w"))
-{
-fwrite($fp, $data);
-}
-fclose($fp);*/
-
-mysql_close($conexion) 
-
-      
-      
-      
-      
-      
-      /*conexion por MySQL PDO
       require_once 'content/mysql-login.php';
       try {
         $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
-        print "Conexión exitosa!";
+        //SQL 
+$sql = "SELECT * FROM areas";	
+
+//Enviar la consulta a la BD  usando  query->  (hay otros formas de hacerlo, ver ayuda de PHP)
+$result = $connect->query($sql);
+
+/**
+ * Se crea un array asociativo  de los  resultados usando fecht-> y se almacena en $datos
+ *  Hay otras formas de almacenar el  resultado según las  necesidades...
+ *  Ver ayuda de PHP para  otras variantes de  fetch
+*/ 
+$datos = $result->fetch(PDO::FETCH_ASSOC);
+
+//Se verifica que la consulta  devolvió valores
+if ($result->rowCount() > 0)
+{
+    print_r($datos);
+}else{
+ print_r("No se encontraron datos, verifique su conexión o la consulta enviada");   
+}
      ?>
         <button onclick="window.location.href='content/obtener_roles.php'" class="btn btn-default btn-block">
           <h3>todos los puestos</h3>
