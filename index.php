@@ -14,40 +14,13 @@
       //conexion por MySQL PDO
       require_once 'content/mysql-login.php';
       try {
-        $conexion = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
+        $con = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
         print "Conexión exitosa!";
-        mysql_select_db($database, $conexion); 
-
-        $query = mysql_query("SELECT * FROM areas"); 
-
-        $convertToJson = array();
-
-        while($row = mysql_fetch_array($query, MYSQL_ASSOC))
-        {
-        $rowArray['id_area'] = $row['id_area'];
-        $rowArray['area'] = $row['area'];
-        array_push($convertToJson, $rowArray);
-        }
-        json_encode($convertToJson);
-
-        //$listaEmpleos = "json/listaEmpleos.json";
-
-        $data = json_encode($convertToJson);
-        
-        echo ("$data = ");
-
-        /* ($fp = fopen($listaEmpleos, "w"))
-        {
-        fwrite($fp, $data);
-        }
-        fclose($fp);
-
-        mysql_close($conexion)
      ?>
         <button onclick="window.location.href='content/obtener_roles.php'" class="btn btn-default btn-block">
           <h3>todos los puestos</h3>
         </button>
-      <?php*/
+      <?php
       }
         catch (PDOException $e) {
         print "¡Error!: " . $e->getMessage() . "
