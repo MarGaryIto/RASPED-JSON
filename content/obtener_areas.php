@@ -4,7 +4,7 @@
       try {
         $DBcon = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
         $DBcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        print "Conexión exitosa!";
+            
         $query = "SELECT * FROM areas";
  
         $stmt = $DBcon->prepare($query);
