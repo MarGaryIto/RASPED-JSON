@@ -9,19 +9,18 @@ try{
   
   die($ex->getMessage());
  }
-
-/*$query = "SELECT * FROM roles";
  
-$stmt = $DBcon->prepare($query);
-$stmt->execute();
-
-$userData = array();
-
-while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+ $query = "SELECT * FROM roles";
+ 
+ $stmt = $DBcon->prepare($query);
+ $stmt->execute();
+ 
+ $userData = array();
+ 
+ while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
   
-      $userData['AllRoles'][] = $row;
+  $userData['AllUsers'][] = $row;
+ }
  
-}
-
-echo json_encode($userData);*/
+ echo json_encode($userData);
 ?>
