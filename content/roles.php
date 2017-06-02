@@ -10,7 +10,7 @@ try{
   die($ex->getMessage());
  }
 
-$query = "SELECT * FROM roles";
+/*$query = "SELECT * FROM roles";
  
 $stmt = $DBcon->prepare($query);
 $stmt->execute();
@@ -23,5 +23,5 @@ while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
  
 }
 
-echo json_encode($userData);
+echo json_encode($userData);*/
 ?>
