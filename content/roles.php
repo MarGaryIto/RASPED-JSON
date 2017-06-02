@@ -2,7 +2,7 @@
 require_once 'mysql-login.php';
 try{
   
-  $DBcon = new PDO("mysql:host=$hostname ;dbname=$database ",$username ,$password );
+  $DBcon = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
   $DBcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
  }catch(PDOException $ex){
