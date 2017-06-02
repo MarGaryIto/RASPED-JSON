@@ -18,7 +18,7 @@
         print "Conexión exitosa!";
      ?>
       <br/>
-        <button onclick="window.location.href='content/obtener_areas.php'" class="btn btn-default btn-block">
+        <button onclick="window.location.href='content/consulta-roles.php'" class="btn btn-default btn-block">
           <h3>todos las areas</h3>
         </button>
       <?php
