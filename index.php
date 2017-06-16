@@ -1,24 +1,46 @@
 <?php
-require_once "conectar.php";
 
-$sql = "select * from sedes";
-$res = mysql_query($sql, Conectar::con());
-$row = mysql_fetch_Assoc($res);
-$json = array(
-    'id_sede' => $row['id_sede'],
-    'nombre_sede' => $row['nombre_sede'],
-    'Habilidades' => array()
-);
+$server = "lg7j30weuqckmw07.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306";
+$user = "rftpzxoddr4wj8r6";
+$pass = "dy44wpzriur1y3x2";
+$bd = "uw66w2of7cy982x1";
 
+//Creamos la conexión
+$conexion = mysqli_connect($server, $user, $pass,$bd) 
+or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
-foreach($row as $val){
-    $json['Habilidades'][] = $val;
+//generamos la consulta
+$sql = "SELECT * FROM sedes";
+mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
+
+if(!$result = mysqli_query($conexion, $sql)) die();
+
+$clientes = array(); //creamos un array
+
+while($row = mysqli_fetch_array($result)) 
+{ 
+	$id_sede=$row['id_sede'];
+	$nombre_sede=$row['nombre_sede'];	
+
+	$clientes[] = array('id_sede'=> $id_sede, 'nombre_sede'=> $nombre_sede);
+
 }
+	
+//desconectamos la base de datos
+$close = mysqli_close($conexion) 
+or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
+  
 
-$jsonencoded = json_encode($json,JSON_UNESCAPED_UNICODE);
+//Creamos el JSON
+//$clientes['clientes'] = $clientes;
+$json_string = json_encode($clientes);
+echo $json_string;
 
-$fh = fopen($row['username'].".json", 'w');
-fwrite($fh, $jsonencoded);
-fclose($fh);
+//Si queremos crear un archivo json, sería de esta forma:
+/*
+$file = 'clientes.json';
+file_put_contents($file, $json_string);
+*/
+	
 
 ?>
