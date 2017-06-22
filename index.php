@@ -1,6 +1,6 @@
 <?php
 
-require_once ('json/conexion');
+require_once ('content/mysql-login.php');
 
 //Creamos la conexión
 $conexion = mysqli_connect($server, $user, $pass,$bd) 
