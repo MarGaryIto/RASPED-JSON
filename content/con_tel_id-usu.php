@@ -7,7 +7,10 @@ $conexion = mysqli_connect($server, $user, $pass,$bd)
 or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
 //generamos la consulta
-$id_sede = $_REQUEST['id_sede'];
+$contrasena = $_REQUEST['contrasena'];
+$fk_telefono = $_REQUEST['fk_telefono'];
+
+
 $sql = "SELECT * FROM sedes where id_sede = '$id_sede'";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
