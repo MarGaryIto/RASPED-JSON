@@ -11,7 +11,7 @@ $contrasena = $_REQUEST['contrasena'];
 $fk_telefono = $_REQUEST['fk_telefono'];
 
 
-$sql = "SELECT * FROM sedes where id_sede = '$id_sede'";
+$sql = "SELECT U. FROM sedes where id_sede = '$id_sede'";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
 if(!$result = mysqli_query($conexion, $sql)) die();
