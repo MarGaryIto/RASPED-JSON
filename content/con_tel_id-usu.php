@@ -16,7 +16,7 @@ $clientes = array(); //creamos un array
 
 while($row = mysqli_fetch_array($result)) 
 { 
-    $id=$row['id_personal'];
+    $id_personal=$row['id_personal'];
 
     $clientes[] = array('id_personal'=> $id_personal);
 
