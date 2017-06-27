@@ -21,16 +21,11 @@ $clientes = array(); //creamos un array
 while($row = mysqli_fetch_array($result)) 
 { 
     $id_personal=$row['id_personal'];
-    $nombre=$row['nombre'];
-    $edad=$row['edad'];
-    $genero=$row['genero'];
-    $email=$row['email'];
-    $localidad=$row['localidad'];
     $telefono=$row['telefono'];
+    $contrasena=$row['contrasena'];
     
 
-    $clientes[] = array('id_personal'=> $id_personal, 'nombre'=> $nombre, 'edad'=> $edad, 'genero'=> $genero,
-                        'email'=> $email, 'localidad'=> $localidad, 'telefono'=> $telefono);
+    $clientes[] = array('id_personal'=> $id_personal, 'contrasena'=> $contrasena,'telefono'=> $telefono);
 
 }
     
