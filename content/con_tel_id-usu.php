@@ -7,11 +7,7 @@ $conexion = mysqli_connect($server, $user, $pass,$bd)
 or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
 //generamos la consulta
-$sql = "SELECT P.contrasena,
-concat(T.fk_lada,T.telefono) as telefono,
-P.id_personal
-FROM personal P, telefonos T
-WHERE P.fk_telefono = T.id_telefono";
+$sql = "SELECT * FROM personal";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
 if(!$result = mysqli_query($conexion, $sql)) die();
@@ -20,9 +16,17 @@ $clientes = array(); //creamos un array
 
 while($row = mysqli_fetch_array($result)) 
 { 
-    $id_personal=$row['id_personal']
+    $id_personal=$row['id_personal'];
+    $nombre=$row['nombre'];
+    $edad=$row['edad'];
+    $genero=$row['genero'];
+    $email=$row['email'];
+    $localidad=$row['localidad'];
+    $telefono=$row['telefono'];
+    
 
-    $clientes[] = array('id_personal'=>$id_personal);
+    $clientes[] = array('id_personal'=> $id_personal, 'nombre'=> $nombre, 'edad'=> $edad, 'genero'=> $genero,
+                        'email'=> $email, 'localidad'=> $localidad, 'telefono'=> $telefono);
 
 }
     
@@ -41,4 +45,5 @@ $file = 'clientes.json';
 file_put_contents($file, $json_string);
 */
     
+
 ?>
