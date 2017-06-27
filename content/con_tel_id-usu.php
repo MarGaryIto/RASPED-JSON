@@ -24,7 +24,7 @@ while($row = mysqli_fetch_array($result))
     $telefono=$row['telefono'];
     $id_personal=$row['id_personal']
 
-    $clientes[] = array('contrasena'=> $contrasena,'telefono'=>$telefono,'id_personal'=>$id_personal);
+    $clientes[] = array('contrasena'=> $contrasena);
 
 }
     
