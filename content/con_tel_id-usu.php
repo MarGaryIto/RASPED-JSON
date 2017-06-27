@@ -27,9 +27,10 @@ while($row = mysqli_fetch_array($result))
     $id_personal=$row['id_personal'];
     $telefono=$row['telefono'];
     $contrasena=$row['contrasena'];
+    $id_usuario=$row['id_usuario'];
     
 
-    $clientes[] = array('id_personal'=> $id_personal, 'contrasena'=> $contrasena,'telefono'=> $telefono);
+    $clientes[] = array('id_personal'=> $id_personal, 'contrasena'=> $contrasena,'telefono'=> $telefono,'id_usuario'=>$id_usuario);
 
 }
     
