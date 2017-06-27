@@ -6,16 +6,12 @@ require_once ('mysql-login.php');
 $conexion = mysqli_connect($server, $user, $pass,$bd) 
 or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
-//generamos la consulta
+//almacenamos variables
 $contrasena = $_REQUEST['contrasena'];
 $telefono = $_REQUEST['telefono'];
 
-
-$sql = "SELECT P.contrasena,
-concat(T.fk_lada,T.telefono) as telefono,
-P.id_personal
-FROM personal P, telefonos T
-WHERE P.fk_telefono = T.id_telefono;
+//Generamos la colsulta
+$sql = "SELECT * from personal;
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
 if(!$result = mysqli_query($conexion, $sql)) die();
