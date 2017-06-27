@@ -20,9 +20,11 @@ $clientes = array(); //creamos un array
 
 while($row = mysqli_fetch_array($result)) 
 { 
-    $id_personal=$row['id_personal'];
+    $contrasena=$row['contrasena'];
+    $telefono=$row['telefono'];
+    $id_personal=$row['id_personal']
 
-    $clientes[] = array('id_personal'=> $id_personal);
+    $clientes[] = array('contrasena'=> $contrasena,'telefono'=>$telefono,'id_personal'=>$id_personal);
 
 }
     
