@@ -12,7 +12,8 @@ $telefono = $_REQUEST['telefono'];
 //generamos la consulta
 $sql = "SELECT P.contrasena,
 concat(T.fk_lada,T.telefono) as telefono,
-P.id_personal
+P.id_personal,
+P.id_usuario
 FROM personal P, telefonos T
 WHERE P.fk_telefono = T.id_telefono and
 concat(T.fk_lada,T.telefono) = '$telefono'";
