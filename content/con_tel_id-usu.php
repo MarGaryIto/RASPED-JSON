@@ -22,7 +22,7 @@ while($row = mysqli_fetch_array($result))
 { 
     $id_personal=$row['id_personal']
 
-    $clientes[] = array('id_personal'=> $id_personal);
+    $clientes[] = array('id_personal'=>$id_personal);
 
 }
     
