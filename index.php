@@ -27,11 +27,7 @@
       <!-- Jumbotron contenedor de titulo y descripcion -->
       <div class="jumbotron">
         <h1>RASPED</h1>
-        <div class="container" aling="center">
-          <div class="header clearfix">
-            <img src="https://k60.kn3.net/1/D/B/E/6/E/5E2.png" class="img-responsive" alt="Cinque Terre">
-          </div>
-        </div>
+        <img src="https://k61.kn3.net/4/9/C/3/3/1/5A6.png" class="img-responsive" alt="Cinque Terre">
         <p class="lead">Espacio para la consulta y generación de archivos JSON, desde la base de datos remota de RASPED.</p>
       </div>
 
