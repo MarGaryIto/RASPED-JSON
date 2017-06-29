@@ -19,7 +19,7 @@
   <body>
     
     <!-- Version -->
-    <div class="container">
+    <div class="container" aling="center">
       <div class="header clearfix">
         <h3 class="text-muted">Versión 1.0.0</h3>
       </div>
