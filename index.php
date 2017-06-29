@@ -54,7 +54,7 @@
         
         <div class="col-lg-4">
         <h4>Personal por id</h4>
-          <form role="form" action="content/personal_tel.php" method="post">
+          <form role="form" action="content/personal_id.php" method="post">
             <div class="form-group">
                 <input id="id_personal" name="id_personal"  type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id" required>
             </div>
