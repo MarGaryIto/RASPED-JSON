@@ -66,7 +66,7 @@
       
       <!-- Descripcion final tipo footer -->
       <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>&copy; 2017 RASPED - JSON - Android - 1715110196@utec-tgo.edu.mx.</p>
       </footer>
       
     </div>
