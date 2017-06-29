@@ -11,6 +11,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
 
   </head>
   
@@ -53,6 +54,12 @@
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
       </div>
+      
+      <!-- Descripcion final -->
+      <footer class="footer">
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+      
     </div>
  
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
