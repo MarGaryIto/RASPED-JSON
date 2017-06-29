@@ -44,7 +44,7 @@
         
         <div class="col-lg-4">
         <h4>Personal por Telefono</h4>
-          <form role="form" action="content/con_tel_id-usu.php" method="post">
+          <form role="form" action="content/personal_tel.php" method="post">
             <div class="form-group">
                 <input type="text" name="telefono" id="telefono" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
             </div>
