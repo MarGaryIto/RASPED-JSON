@@ -33,7 +33,7 @@ while($row = mysqli_fetch_array($result))
 { 
     $id_personal=$row['id_personal'];
     $cupo=$row['cupo'];
-    $nombre_personal=$['nombre_personal'];
+    $nombre_personal=$row['nombre_personal'];
     $apellidos=$row['apellidos'];
     $telefono=$row['telefono'];
     $contrasena=$row['contrasena'];
