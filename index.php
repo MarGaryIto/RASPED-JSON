@@ -13,26 +13,23 @@
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 
   </head>
+  
+  <!-- Contenido de la paguina -->
   <body>
-    <!-- Contenido de la paguina -->
+    
+    <!-- Version -->
     <div class="container">
       <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">About</a></li>
-            <li role="presentation"><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Project name</h3>
+        <h3 class="text-muted">Versión 1.0.0</h3>
       </div>
 
+      <!-- Jumbotron contenedor de titulo y descripcion -->
       <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        <h1>RASPED</h1>
+        <p class="lead">Paguina para la consulta y generacion de archivos JSON, desde la base de datos remota de RASPED</p>
       </div>
 
+      <!-- Tabla poblada de las consultas -->
       <div class="row marketing">
         <div class="col-lg-6">
           <h4>Subheading</h4>
@@ -56,11 +53,6 @@
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
       </div>
-
-      <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
-      </footer>
-
     </div>
  
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
