@@ -40,8 +40,7 @@
           <h4>Personal por Telefono</h4>
           <form role="form">
             <div class="form-group">
-              <label for="ejemplo_email_1">Telefono</label>
-                <input type="tel" class="form-control" id="ejemplo_email_1" placeholder="Telefono">
+                <input type="tel" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
             </div>
             <button type="submit" class="btn btn-default">Consultar</button>
           </form>
@@ -49,8 +48,7 @@
           <h4>Personal por id</h4>
           <form role="form">
             <div class="form-group">
-              <label for="ejemplo_email_1">id</label>
-                <input type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id">
+                <input type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id" required>
             </div>
             <button type="submit" class="btn btn-default">Consultar</button>
           </form>
