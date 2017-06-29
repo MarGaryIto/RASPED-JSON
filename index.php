@@ -44,7 +44,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Consultar</button>
           </form>
-
+        </div>
+        <div class="col-lg-6">
           <h4>Personal por id</h4>
           <form role="form">
             <div class="form-group">
