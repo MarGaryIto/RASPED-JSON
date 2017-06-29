@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Plantilla básica de Bootstrap</title>
+    <title>RASPED</title>
  
     <!-- CSS de Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -14,7 +14,12 @@
 
   </head>
   <body>
-    <h1>¡Hola mundo!</h1>
+    <!-- Contenido de la paguina -->
+    <div class="jumbotron">
+        <h1>Jumbotron heading</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+      </div>
  
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
