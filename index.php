@@ -27,7 +27,7 @@
       <!-- Jumbotron contenedor de titulo y descripcion -->
       <div class="jumbotron">
         <h1>RASPED</h1>
-        <img src="https://image.ibb.co/j8bV55/RASPED_BM_icono_Reloj_Flecha_Fuera_Edited.png" class="img-responsive" alt="icon">
+        <img src="<a href="https://preview.ibb.co/hg0CJQ/RASPED_BM_icono_Reloj_Flecha_Fuera_Edited.png" class="img-responsive" alt="icon">
         <p class="lead">Espacio para la consulta y generación de archivos JSON, desde la base de datos remota de RASPED.</p>
       </div>
 
