@@ -27,7 +27,7 @@
       <!-- Jumbotron contenedor de titulo y descripcion -->
       <div class="jumbotron">
         <h1>RASPED</h1>
-        <img src="..." class="img-responsive" alt="Imagen responsive">
+        <img src="..." class="img-responsive" alt="icon">
         <p class="lead">Espacio para la consulta y generación de archivos JSON, desde la base de datos remota de RASPED.</p>
       </div>
 
