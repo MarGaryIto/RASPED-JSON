@@ -39,14 +39,14 @@
         
         <div class="col-lg-4">
           <h4>Todo el Personal</h4>
-          <button type="submit" class="btn btn-primary">Consultar</button>
+          <a href="content/personal.php" class="btn btn-primary" role="button">Consultar</a>
         </div><!-- /.col-lg-4 -->
         
         <div class="col-lg-4">
         <h4>Personal por Telefono</h4>
-          <form role="form">
+          <form role="form" action="content/con_tel_id-usu.php" method="post">
             <div class="form-group">
-                <input type="text" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
+                <input type="text" name="telefono" id="telefono" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
             </div>
             <button type="submit" class="btn btn-primary">Consultar</button>
           </form>
@@ -54,9 +54,9 @@
         
         <div class="col-lg-4">
         <h4>Personal por id</h4>
-          <form role="form">
+          <form role="form" action="content/personal_tel.php" method="post">
             <div class="form-group">
-                <input type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id" required>
+                <input id="id_personal" name="id_personal"  type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id" required>
             </div>
             <button type="submit" class="btn btn-primary">Consultar</button>
           </form>
