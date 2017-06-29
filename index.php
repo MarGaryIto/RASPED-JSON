@@ -36,10 +36,13 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
+        
         <div class="col-lg-4">
           <h4>Todo el Personal</h4>
           <a class="btn btn-lg btn-success" href="#" role="button">Consultar</a>
         </div><!-- /.col-lg-4 -->
+        
+        <div class="col-lg-4">
         <h4>Personal por Telefono</h4>
           <form role="form">
             <div class="form-group">
@@ -48,6 +51,8 @@
             <a class="btn btn-lg btn-success" href="#" role="button">Consultar</a>
           </form>
         </div><!-- /.col-lg-4 -->
+        
+        <div class="col-lg-4">
         <h4>Personal por id</h4>
           <form role="form">
             <div class="form-group">
@@ -56,6 +61,7 @@
             <a class="btn btn-lg btn-success" href="#" role="button">Consultar</a>
           </form>
         </div><!-- /.col-lg-4 -->
+        
       </div><!-- /.row -->
       
       <!-- Descripcion final tipo footer -->
