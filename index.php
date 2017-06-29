@@ -39,7 +39,7 @@
         
         <div class="col-lg-4">
           <h4>Todo el Personal</h4>
-          <button type="button" class="btn btn-primary">Consultar</button>
+          <button type="submit" class="btn btn-primary">Consultar</button>
         </div><!-- /.col-lg-4 -->
         
         <div class="col-lg-4">
@@ -48,7 +48,7 @@
             <div class="form-group">
                 <input type="text" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
             </div>
-            <button type="button" class="btn btn-primary">Consultar</button>
+            <button type="submit" class="btn btn-primary">Consultar</button>
           </form>
         </div><!-- /.col-lg-4 -->
         
@@ -58,7 +58,7 @@
             <div class="form-group">
                 <input type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id" required>
             </div>
-            <button type="button" class="btn btn-primary">Consultar</button>
+            <button type="submit" class="btn btn-primary">Consultar</button>
           </form>
         </div><!-- /.col-lg-4 -->
         
