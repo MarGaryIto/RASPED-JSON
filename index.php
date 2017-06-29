@@ -40,7 +40,7 @@
           <h4>Personal por Telefono</h4>
           <form role="form">
             <div class="form-group">
-                <input type="tel" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
+                <input type="text" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
             </div>
             <button type="submit" class="btn btn-default">Consultar</button>
           </form>
