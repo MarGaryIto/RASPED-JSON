@@ -34,25 +34,26 @@
       <!-- Tabla poblada de las consultas -->
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <h4>Todo el Personal</h4>
+          <button type="submit" class="btn btn-default">Consultar</button>
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+          <h4>Personal por Telefono</h4>
+          <form role="form">
+            <div class="form-group">
+              <label for="ejemplo_email_1">Telefono</label>
+                <input type="tel" class="form-control" id="ejemplo_email_1" placeholder="Telefono">
+            </div>
+            <button type="submit" class="btn btn-default">Consultar</button>
+          </form>
 
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <h4>Personal por id</h4>
+          <form role="form">
+            <div class="form-group">
+              <label for="ejemplo_email_1">id</label>
+                <input type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id">
+            </div>
+            <button type="submit" class="btn btn-default">Consultar</button>
+          </form>
         </div>
       </div>
       
