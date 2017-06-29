@@ -35,14 +35,14 @@
       <div class="row marketing">
         <div class="col-lg-6">
           <h4>Todo el Personal</h4>
-          <button type="submit" class="btn btn-primary">Consultar</button>
+          <a class="btn btn-lg btn-success" href="#" role="button">Consultar</button>
 
           <h4>Personal por Telefono</h4>
           <form role="form">
             <div class="form-group">
                 <input type="text" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
             </div>
-            <button type="submit" class="btn btn-primary">Consultar</button>
+            <a class="btn btn-lg btn-success" href="#" role="button">Consultar</button>
           </form>
         </div>
         <div class="col-lg-6">
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <input type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id" required>
             </div>
-            <button type="submit" class="btn btn-primary">Consultar</button>
+            <a class="btn btn-lg btn-success" href="#" role="button">Consultar</button>
           </form>
         </div>
       </div>
