@@ -1,10 +1,14 @@
 <?php
+
 require_once ('mysql-login.php');
+
 //Creamos la conexión
 $conexion = mysqli_connect($server, $user, $pass,$bd) 
 or die("Ha sucedido un error inexperado en la conexion de la base de datos");
+
 //solicitamos las variables
-$telefono = $_REQUEST['telefono'];
+$id_personal = $_REQUEST['id_personal'];
+
 //generamos la consulta
 $sql = "SELECT PER.id_personal,
 concat(CUP.fk_sede,CUP.cupo) as cupo,
@@ -20,7 +24,8 @@ WHERE PER.fk_cupo = CUP.id_cupo and
 PER.fk_telefono = TEL.id_telefono and
 PER.fk_horario = HOR.id_horario and
 PER.fk_puesto = PUE.id_puesto and
-PER.fk_usuario = USU.id_usuario";
+PER.fk_usuario = USU.id_usuario and
+PER.id_personal = '$id_personal'";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 if(!$result = mysqli_query($conexion, $sql)) die();
 $clientes = array(); //creamos un array
