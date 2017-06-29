@@ -33,7 +33,7 @@
 
       <!-- Tabla poblada de las consultas -->
       <div class="row marketing">
-        <div class="col-lg-6">
+        <div class="col-lg-6" background="#000">
           <h4>Todo el Personal</h4>
           <a class="btn btn-lg btn-success" href="#" role="button">Consultar</a>
 
