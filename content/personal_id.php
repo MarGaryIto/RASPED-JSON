@@ -33,12 +33,14 @@ while($row = mysqli_fetch_array($result))
 { 
     $id_personal=$row['id_personal'];
     $cupo=$row['cupo'];
-    $apellidos=$row['telefono'];
+    $nombre_personal=$['nombre_personal'];
+    $apellidos=$row['apellidos'];
+    $telefono=$row['telefono'];
     $contrasena=$row['contrasena'];
     $horario=$row['horario'];
     $puesto=$row['puesto'];
     $usuario=$row['usuario'];
-    $clientes[] = array('id_personal'=> $id_personal, 'cupo'=> $cupo, 'telefono'=> $telefono, 'contrasena'=> $contrasena, 'horario'=> $horario, 'puesto'=> $puesto, 'usuario'=> $usuario);
+    $clientes[] = array('id_personal'=> $id_personal, 'cupo'=> $cupo, 'nombre_personal'=> $nombre_personal, 'apellidos'=>$apellidos, 'telefono'=> $telefono, 'contrasena'=> $contrasena, 'horario'=> $horario, 'puesto'=> $puesto, 'usuario'=> $usuario);
 }
     
 //desconectamos la base de datos
