@@ -45,11 +45,16 @@
         <div class="col-lg-4">
         <h4>Personal por Telefono</h4>
           <form role="form" action="content/personal_tel.php" method="post">
-            <div class="form-group">
-                <input type="text" name="telefono" id="telefono" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
+            <div class="input-group">
+              <input type="text" name="telefono" id="telefono" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary">Consultar</button>
           </form>
+          <form >
         </div><!-- /.col-lg-4 -->
         
         <div class="col-lg-4">
@@ -75,7 +80,7 @@
             </div>
             <div class="form-group">
               <input type="number" min="01" max="9999" step="1" name="cupo" id="cupo" class="form-control" placeholder="cupo" required>
-            </div></br>
+            </div>
             <div class="form-group"><!-- Nombre Personal -->
                 <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
             </div>
@@ -121,7 +126,7 @@
                 <option>4</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Consultar</button>
+            <button type="submit" class="btn btn-primary">Insertar</button>
           </form>
         </div><!-- /.col-lg-4 -->
         
