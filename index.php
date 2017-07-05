@@ -70,11 +70,9 @@
         <div class="col-lg-4">
         <h4>Insertar Personal</h4>
           <form role="form" action="content/insertar_personal.php" method="post">
-            <div class="form-group"><!-- Sede -->
-                <input type="number" min="01" max="99" step="1" name="sede" id="sede" class="form-control" placeholder="sede" required>
-            </div>
-            <div class="form-group"><!-- Cupo -->
-                <input type="number" min="01" max="9999" step="1" name="cupo" id="cupo" class="form-control" placeholder="cupo" required>
+            <div class="form-group"><!-- Sede --><!-- Cupo -->
+              <input type="number" min="01" max="99" step="1" name="sede" id="sede" class="form-control" placeholder="sede" required>
+              <input type="number" min="01" max="9999" step="1" name="cupo" id="cupo" class="form-control" placeholder="cupo" required>
             </div>
             <div class="form-group"><!-- Nombre Personal -->
                 <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
