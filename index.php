@@ -49,7 +49,7 @@
               <input type="text" name="telefono" id="telefono" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
               <div class="input-group-btn">
                 <button class="btn btn-default" type="submit">
-                  <i class="glyphicon glyphicon-search"></i>
+                  <span class="glyphicon glyphicon-search"></span>
                 </button>
               </div>
             </div>
