@@ -72,6 +72,8 @@
           <form role="form-inline" action="content/insertar_personal.php" method="post">
             <div class="form-group"><!-- Sede --><!-- Cupo -->
               <input type="number" min="01" max="99" step="1" name="sede" id="sede" class="form-control" placeholder="sede" required>
+            </div>
+            <div class="form-group">
               <input type="number" min="01" max="9999" step="1" name="cupo" id="cupo" class="form-control" placeholder="cupo" required>
             </div></br>
             <div class="form-group"><!-- Nombre Personal -->
