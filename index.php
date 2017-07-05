@@ -94,33 +94,31 @@
             <div class="form-group"><!-- Contraseña -->
                 <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
             </div>
-            <div class="form-group">
-  <label for="sel1">Select list:</label>
-  <select class="form-control" id="sel1">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-  </select>
-</div>
-            <div class="form-group"><!-- Puesto -->
-                <select name="OS">
-                  <option value="1">Windows Vista</option> 
-                  <option value="2">Windows 7</option> 
-                   <option value="3">Windows XP</option>
-                   <option value="10">Fedora</option> 
-                   <option value="11">Debian</option> 
-                   <option value="12">Suse</option> 
+            <div class="form-group"><!-- horario -->
+              <label for="sel1">horario</label>
+              <select class="form-control" id="sel1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
               </select>
             </div>
-            <div class="form-group"><!-- Tipo usuario -->
-                <select name="OS">
-                  <option value="1">Windows Vista</option> 
-                  <option value="2">Windows 7</option> 
-                   <option value="3">Windows XP</option>
-                   <option value="10">Fedora</option> 
-                   <option value="11">Debian</option> 
-                   <option value="12">Suse</option> 
+            <div class="form-group"><!-- puesto -->
+              <label for="sel1">puesto</label>
+              <select class="form-control" id="sel1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="form-group"><!-- Tipo Usuario -->
+              <label for="sel1">tipo de usuario</label>
+              <select class="form-control" id="sel1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary">Consultar</button>
