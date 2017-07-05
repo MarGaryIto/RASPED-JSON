@@ -58,10 +58,10 @@
         </div><!-- /.col-lg-4 -->
         
         <div class="col-lg-4">
-        <h4>Personal por Telefono</h4>
+        <h4>Personal por ID</h4>
           <form role="form" action="content/personal_id.php" method="post">
             <div class="input-group">
-              <input type="text" name="id_personal" id="id_personal" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
+              <input type="number" name="id_personal" id="id_personal" min="1" max="99" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
               <div class="input-group-btn">
                 <button class="btn btn-default" type="submit">
                   <span class="glyphicon glyphicon-search"></span>
