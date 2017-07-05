@@ -34,7 +34,7 @@
       <!-- Tabla poblada de las consultas -->      
       <div class="container marketing">
 
-      <!-- Three columns of text below the carousel -->
+      <!-- Columna de tres elementos -->
       <div class="row">
         
         <div class="col-lg-4">
@@ -57,6 +57,72 @@
           <form role="form" action="content/personal_id.php" method="post">
             <div class="form-group">
                 <input id="id_personal" name="id_personal"  type="number" min="1" max="100" step="1" class="form-control" id="ejemplo_email_1" placeholder="id" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+          </form>
+        </div><!-- /.col-lg-4 -->
+        
+      </div><!-- /.row -->
+        
+      <!-- Columna de tres elementos -->
+      <div class="row">
+        
+        <div class="col-lg-4">
+        <h4>Insertar Personal</h4>
+          <form role="form" action="content/insertar_personal.php" method="post">
+            <div class="form-group"><!-- Sede -->
+                <input type="number" min="01" max="99" step="1" name="sede" id="sede" class="form-control" placeholder="sede" required>
+            </div>
+            <div class="form-group"><!-- Cupo -->
+                <input type="number" min="01" max="9999" step="1" name="cupo" id="cupo" class="form-control" placeholder="cupo" required>
+            </div>
+            <div class="form-group"><!-- Nombre Personal -->
+                <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
+            </div>
+            <div class="form-group"><!-- Apellido Paterno -->
+                <input type="text" name="apellido_p" id="apellido_p" class="form-control" placeholder="Apellido Paterno" required>
+            </div>
+            <div class="form-group"><!-- Apellido Materno -->
+                <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
+            </div>
+            <div class="form-group"><!-- Lada -->
+                <input type="number" min="01" max="999" step="1" name="lada" id="lada" class="form-control" placeholder="lada" required>
+            </div>
+            <div class="form-group"><!-- Telefono -->
+                <input type="number" min="01" max="9999999" step="1" name="telefono" id="telefono" class="form-control" placeholder="telefono" required>
+            </div>
+            <div class="form-group"><!-- Contraseña -->
+                <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
+            </div>
+            <div class="form-group"><!-- Horario -->
+                <select name="OS">
+                  <option value="1">Windows Vista</option> 
+                  <option value="2">Windows 7</option> 
+                   <option value="3">Windows XP</option>
+                   <option value="10">Fedora</option> 
+                   <option value="11">Debian</option> 
+                   <option value="12">Suse</option> 
+              </select>
+            </div>
+            <div class="form-group"><!-- Puesto -->
+                <select name="OS">
+                  <option value="1">Windows Vista</option> 
+                  <option value="2">Windows 7</option> 
+                   <option value="3">Windows XP</option>
+                   <option value="10">Fedora</option> 
+                   <option value="11">Debian</option> 
+                   <option value="12">Suse</option> 
+              </select>
+            </div>
+            <div class="form-group"><!-- Tipo usuario -->
+                <select name="OS">
+                  <option value="1">Windows Vista</option> 
+                  <option value="2">Windows 7</option> 
+                   <option value="3">Windows XP</option>
+                   <option value="10">Fedora</option> 
+                   <option value="11">Debian</option> 
+                   <option value="12">Suse</option> 
+              </select>
             </div>
             <button type="submit" class="btn btn-primary">Consultar</button>
           </form>
