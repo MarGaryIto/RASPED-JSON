@@ -10,10 +10,13 @@ $telefono = $_REQUEST['telefono'];
 
 //generamos la consulta
 $sql = "SELECT PER.id_personal,
-concat(CUP.fk_sede,CUP.cupo) as cupo,
+CUP.fk_sede as sede,
+CUP.cupo as cupo,
 PER.nombre_personal,
-concat (PER.apellido_p,' ',PER.apellido_m) as apellidos,
-concat(TEL.fk_lada,TEL.telefono) as telefono,
+PER.apellido_p,
+PER.apellido_m,
+TEL.fk_lada as lada,
+TEL.telefono,
 PER.contrasena,
 HOR.hr_nombre as horario,
 PUE.nombre_puesto as puesto,
@@ -32,15 +35,18 @@ $clientes = array(); //creamos un array
 while($row = mysqli_fetch_array($result)) 
 { 
     $id_personal=$row['id_personal'];
+    $sede=$row['sede'];
     $cupo=$row['cupo'];
     $nombre_personal=$row['nombre_personal'];
-    $apellidos=$row['apellidos'];
+    $apellido_p=$row['apellido_p'];
+    $apellido_m=$row['apellido_m'];
+    $lada=$row['lada'];
     $telefono=$row['telefono'];
     $contrasena=$row['contrasena'];
     $horario=$row['horario'];
     $puesto=$row['puesto'];
     $usuario=$row['usuario'];
-    $clientes[] = array('id_personal'=> $id_personal, 'cupo'=> $cupo, 'nombre_personal'=> $nombre_personal, 'apellidos'=>$apellidos, 'telefono'=> $telefono, 'contrasena'=> $contrasena, 'horario'=> $horario, 'puesto'=> $puesto, 'usuario'=> $usuario);
+    $clientes[] = array('id_personal'=> $id_personal, 'sede'=>$sede , 'cupo'=> $cupo, 'nombre_personal'=> $nombre_personal, 'apellido_p'=> $apellido_p, 'apellido_m'=> $apellido_m, 'lada'=> $lada, 'telefono'=> $telefono, 'contrasena'=> $contrasena, 'horario'=> $horario, 'puesto'=> $puesto, 'usuario'=> $usuario );
 }
     
 //desconectamos la base de datos
