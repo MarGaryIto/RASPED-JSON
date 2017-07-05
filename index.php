@@ -94,16 +94,15 @@
             <div class="form-group"><!-- Contraseña -->
                 <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
             </div>
-            <div class="form-group"><!-- Horario -->
-                <select name="OS">
-                  <option value="1">Windows Vista</option> 
-                  <option value="2">Windows 7</option> 
-                   <option value="3">Windows XP</option>
-                   <option value="10">Fedora</option> 
-                   <option value="11">Debian</option> 
-                   <option value="12">Suse</option> 
-              </select>
-            </div>
+            <div class="form-group">
+  <label for="sel1">Select list:</label>
+  <select class="form-control" id="sel1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+</div>
             <div class="form-group"><!-- Puesto -->
                 <select name="OS">
                   <option value="1">Windows Vista</option> 
