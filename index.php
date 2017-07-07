@@ -136,6 +136,11 @@
         </div><!-- /.col-lg-4 -->
         
         <div class="col-lg-4">
+          <h4>Horarios</h4>
+          <a href="content/horarios.php" class="btn btn-primary" role="button">Puestos</a>
+        </div><!-- /.col-lg-4 -->
+        
+        <div class="col-lg-4">
           <h4>Puestos</h4>
           <a href="content/puestos.php" class="btn btn-primary" role="button">Puestos</a>
         </div><!-- /.col-lg-4 -->
