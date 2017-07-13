@@ -7,14 +7,11 @@
     <title>RASPED</title>
  
     <!-- CSS de Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
   </head>
   
   <!-- Contenido de la paguina -->
@@ -86,10 +83,11 @@
       </ul>
         
       <!-- Columna de tres elementos -->
-      
+      <div class="row">
         
+        <div class="col-lg-4">
           <h4>Insertar Personal</h4>
-          <form role="form-inline" action="content/agregar.php" method="post">
+          <form role="form" action="content/agregar.php" method="post">
             <div class="form-group"><!-- Nombre Personal -->
                 <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
             </div>
@@ -104,7 +102,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Insertar</button>
           </form>
-      <div class="row">
+        </div><!-- /.col-lg-4 -->
         
         <div class="col-lg-4">
           <h4>Horarios</h4>
