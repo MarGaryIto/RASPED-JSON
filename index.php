@@ -54,7 +54,6 @@
               </div>
             </div>
           </form>
-          <form >
         </div><!-- /.col-lg-4 -->
         
         <div class="col-lg-4">
@@ -69,7 +68,6 @@
               </div>
             </div>
           </form>
-          <form >
         </div><!-- /.col-lg-4 -->
         
       </div><!-- /.row -->
