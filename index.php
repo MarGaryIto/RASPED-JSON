@@ -83,7 +83,7 @@
         
         <div class="col-lg-4">
           <h4>Insertar Personal</h4>
-          <form role="form" action="content/agregar.php" method="post">
+          <form class="form-inline" action="content/agregar.php" method="post">
             <div class="form-group"><!-- Nombre Personal -->
                 <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
             </div>
@@ -96,6 +96,39 @@
             <div class="form-group"><!-- Contraseña -->
                 <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
             </div>
+            
+            <div class="form-group"><!-- Lada -->
+                <input type="number" min="1" max="999" name="lada" id="lada" class="form-control" placeholder="lada" required>
+            </div>
+            
+            <div class="form-group"><!-- Telefono -->
+                <input type="number" min="1" max="99999999" name="telefono" id="telefono" class="form-control" placeholder="telefono" required>
+            </div>
+            
+            <div class="form-group"><!-- Tipo Usuario -->
+              <label for="sel1">tipo de usuario</label>
+              <select class="form-control" id="sel1">
+                
+                <?php
+                require_once ('mysql-login.php');
+                //Creamos la conexión
+                $conexion = mysqli_connect($server, $user, $pass,$bd) 
+                or die("Ha sucedido un error inexperado en la conexion de la base de datos");
+                //generamos la consulta
+                $sql = "SELECT hr_nombre from horarios";
+                mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
+                if(!$result = mysqli_query($conexion, $sql)) die();
+                $clientes = array(); //creamos un array
+                while($row = mysqli_fetch_array($result)) 
+                { 
+                  $horario = $row['hr_nombre'];
+                  echo "<option>$horario</option>";
+                }
+                ?>
+                
+              </select>
+            </div>
+            
             <button type="submit" class="btn btn-primary">Insertar</button>
           </form>
         </div><!-- /.col-lg-4 -->
