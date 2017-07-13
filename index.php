@@ -12,14 +12,15 @@
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
-
   </head>
   
   <!-- Contenido de la paguina -->
   <body>
-    
-    <!-- Version -->
+
+    <!-- Contenedor responsivo general -->
     <div class="container" aling="center">
+
+      <!-- Etiqueta de version -->
       <div class="header clearfix">
         <h3 class="text-muted">Versión 1.0.0</h3>
       </div>
@@ -31,20 +32,23 @@
         <p class="lead">Espacio para la consulta y generación de archivos JSON, desde la base de datos remota de RASPED.</p>
       </div>
 
-    <ul class="nav nav-tabs" role="tablist">
-      <li class="active"><a href="#">Personal</a></li>
-    </ul>
+      <!-- Encabezado y separador de Personal -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#">Personal</a></li>
+      </ul>
 
-      <!-- Columna de tres elementos -->
+      <!-- Tabla de Tres columnas -->
       <div class="row">
-        
+
+        <!-- Todo el Personal -->
         <div class="col-lg-4">
           <h4>Todo el Personal</h4>
           <a href="content/personal.php" class="btn btn-primary" role="button">Consultar</a>
-        </div><!-- /.col-lg-4 -->
+        </div>
         
+        <!-- Personal por telefono -->
         <div class="col-lg-4">
-        <h4>Personal por Telefono</h4>
+          <h4>Personal por Telefono</h4>
           <form role="form" action="content/personal_tel.php" method="post">
             <div class="input-group">
               <input type="text" name="telefono" id="telefono" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
@@ -55,10 +59,11 @@
               </div>
             </div>
           </form>
-        </div><!-- /.col-lg-4 -->
+        </div>
         
+        <!-- Personal por id -->
         <div class="col-lg-4">
-        <h4>Personal por ID</h4>
+          <h4>Personal por ID</h4>
           <form role="form" action="content/personal_id.php" method="post">
             <div class="input-group">
               <input type="number" name="id_personal" id="id_personal" min="1" max="99" class="form-control" placeholder="ID" required>
@@ -69,15 +74,19 @@
               </div>
             </div>
           </form>
-        </div><!-- /.col-lg-4 -->
+        </div>
         
       </div><!-- /.row -->
+      
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#">Personal</a></li>
+      </ul>
         
       <!-- Columna de tres elementos -->
       <div class="row">
         
         <div class="col-lg-4">
-        <h4>Insertar Personal</h4>
+          <h4>Insertar Personal</h4>
           <form role="form" action="content/agregar.php" method="post">
             <div class="form-group"><!-- Nombre Personal -->
                 <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
