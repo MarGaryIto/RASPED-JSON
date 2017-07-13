@@ -26,4 +26,6 @@
 		printf("Error: %s\n", mysqli_error($conexion));
 		die();
 	}
+	
+	echo "inserccion finalizada";
 ?>
