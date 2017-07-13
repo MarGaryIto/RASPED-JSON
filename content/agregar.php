@@ -6,9 +6,11 @@
 	$contrasena = $POST['contrasena'];
 
 	//encriptacion md5 de contraseña
+	$contrasena = md5($contrasena);
 
+	echo $contrasena;
 	//uso de datos 
-	require_once ('mysql-login.php');
+	/*require_once ('mysql-login.php');
 
 	//ejecucion de conexion o devolucion de error
 	$conexion = mysqli_connect($server, $user, $pass,$bd)
@@ -27,5 +29,5 @@
 		die();
 	}
 	
-	echo "inserccion finalizada";
+	echo "inserccion finalizada";*/
 ?>
