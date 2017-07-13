@@ -31,8 +31,9 @@
         <p class="lead">Espacio para la consulta y generación de archivos JSON, desde la base de datos remota de RASPED.</p>
       </div>
 
-      <!-- Tabla poblada de las consultas -->      
-      <div class="container marketing">
+    <ul class="nav nav-pills" role="tablist">
+      <li class="active"><a href="#">Personal</a></li>
+    </ul>
 
       <!-- Columna de tres elementos -->
       <div class="row">
