@@ -10,11 +10,14 @@
 
 	echo $contrasena;
 	//uso de datos 
-	/*require_once ('mysql-login.php');
+	require_once ('mysql-login.php');
 
 	//ejecucion de conexion o devolucion de error
-	$conexion = mysqli_connect($server, $user, $pass,$bd)
-		or die("Ha sucedido un error inexperado en la conexion de la base de datos");
+$conexion = mysqli_connect($server, $user, $pass) or die ('problemas con el servidor');
+mysqli_select_db($conexion, $db) or die ('problemas con la base de datos');
+
+	/*$conexion = mysqli_connect($server, $user, $pass,$bd)
+		or die("Ha sucedido un error inexperado en la conexion de la base de datos");*/
 
 	//generacion de consulta para insertar datos
 	$query  = "insert into personal(nombre_personal,apellido_m,apellido_p,contrasena)
@@ -29,5 +32,5 @@
 		die();
 	}
 	
-	echo "inserccion finalizada";*/
+	echo "inserccion finalizada";
 ?>
