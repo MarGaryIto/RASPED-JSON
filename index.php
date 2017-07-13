@@ -77,10 +77,6 @@
         </div>
         
       </div><!-- /.row -->
-      
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#">Personal</a></li>
-      </ul>
         
       <!-- Columna de tres elementos -->
       <div class="row">
@@ -103,7 +99,13 @@
             <button type="submit" class="btn btn-primary">Insertar</button>
           </form>
         </div><!-- /.col-lg-4 -->
+      </div>
         
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#">Personal</a></li>
+        </ul>
+      
+        <div class="row">
         <div class="col-lg-4">
           <h4>Horarios</h4>
           <a href="content/horarios.php" class="btn btn-primary" role="button">Puestos</a>
