@@ -79,13 +79,7 @@
         
         <div class="col-lg-4">
         <h4>Insertar Personal</h4>
-          <form role="form-inline" action="content/insertar_personal.php" method="post">
-            <div class="form-group"><!-- Sede --><!-- Cupo -->
-              <input type="number" min="01" max="99" step="1" name="sede" id="sede" class="form-control" placeholder="sede" required>
-            </div>
-            <div class="form-group">
-              <input type="number" min="01" max="9999" step="1" name="cupo" id="cupo" class="form-control" placeholder="cupo" required>
-            </div>
+          <form role="form-inline" action="content/agregar.php" method="post">
             <div class="form-group"><!-- Nombre Personal -->
                 <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
             </div>
@@ -95,41 +89,8 @@
             <div class="form-group"><!-- Apellido Materno -->
                 <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
             </div>
-            <div class="form-group"><!-- Lada -->
-                <input type="number" min="01" max="999" step="1" name="lada" id="lada" class="form-control" placeholder="lada" required>
-            </div>
-            <div class="form-group"><!-- Telefono -->
-                <input type="number" min="01" max="9999999" step="1" name="telefono" id="telefono" class="form-control" placeholder="telefono" required>
-            </div>
             <div class="form-group"><!-- Contraseña -->
                 <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
-            </div>
-            <div class="form-group"><!-- horario -->
-              <label for="sel1">horario</label>
-              <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </div>
-            <div class="form-group"><!-- puesto -->
-              <label for="sel1">puesto</label>
-              <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </div>
-            <div class="form-group"><!-- Tipo Usuario -->
-              <label for="sel1">tipo de usuario</label>
-              <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
             </div>
             <button type="submit" class="btn btn-primary">Insertar</button>
           </form>
