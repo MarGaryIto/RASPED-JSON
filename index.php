@@ -31,7 +31,7 @@
         <p class="lead">Espacio para la consulta y generación de archivos JSON, desde la base de datos remota de RASPED.</p>
       </div>
 
-    <ul class="nav nav-pills" role="tablist">
+    <ul class="nav nav-tabs" role="tablist">
       <li class="active"><a href="#">Personal</a></li>
     </ul>
 
