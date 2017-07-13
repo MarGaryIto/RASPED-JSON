@@ -8,29 +8,22 @@
 	//encriptacion md5 de contraseña
 	$contrasena = md5($contrasena);
 
-	echo $contrasena;
-	//uso de datos 
+	//llamar mysql-login.php que contiene los datos de la base de datos para conectar
 	require_once ('mysql-login.php');
 
 	//ejecucion de conexion o devolucion de error
-$conexion = mysqli_connect($server, $user, $pass) or die ('problemas con el servidor');
-mysqli_select_db($conexion, $db) or die ('problemas con la base de datos');
-
-	/*$conexion = mysqli_connect($server, $user, $pass,$bd)
-		or die("Ha sucedido un error inexperado en la conexion de la base de datos");*/
+	@$conexion = mysqli_connect($server, $user, $pass,$bd);;
+	if (!$conexion) {
+		die('Connect Error: '.mysqli_connect_error());
+	}
 
 	//generacion de consulta para insertar datos
-	$query  = "insert into personal(nombre_personal,apellido_m,apellido_p,contrasena)
-	values('$nombre_personal','$apellido_m','$apellido_p','$contrasena');
+	$query  = "insert into personal(nombre_personal,apellido_m,apellido_p,contrasena) values('$nombre_personal','$apellido_m','$apellido_p','$contrasena');
 
-	//obtencion del resultado
-	$resultado = mysqli_query($conexion, $query);
+	//realizar la inserccion o devolucion de error
+	$result = mysqli_query($conexion, $query) or die('Error:'.mysqli_error());
 
-	//evaluacion del resultado y devolucion de error en caso de serlo
-	if ($resultado == false) {
-		printf("Error: %s\n", mysqli_error($conexion));
-		die();
-	}
+	mysqli_close($conexion);
 	
 	echo "inserccion finalizada";
 ?>
