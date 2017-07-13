@@ -23,7 +23,7 @@
 	//realizar la inserccion o devolucion de error
 	$result = mysqli_query($conexion, $query) or die('Error:'.mysqli_error());
 
-	mysqli_close($conexion);*/
+	mysqli_close($conexion);
 	
 	echo "inserccion finalizada";
 ?>
