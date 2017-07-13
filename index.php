@@ -129,6 +129,29 @@
               </select>
             </div>
             
+            <div class="form-group"><!-- Tipo Usuario -->
+              <label for="sel1">puesto</label>
+              <select class="form-control" id="sel1">
+                
+                <?php
+                //generamos la consulta
+                $sql = "SELECT nombre_puesto from puestos";
+                mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
+                if(!$result = mysqli_query($conexion, $sql)) die();
+                $clientes = array(); //creamos un array
+                while($row = mysqli_fetch_array($result)) 
+                { 
+                  $puesto = $row['nombre_puesto'];
+                  echo "<option>" . $puesto . "</option>";
+                }
+                //desconectamos la base de datos
+                $close = mysqli_close($conexion) 
+                or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
+                ?>
+                
+              </select>
+            </div>
+            
             <button type="submit" class="btn btn-primary">Insertar</button>
           </form>
         </div><!-- /.col-lg-4 -->
