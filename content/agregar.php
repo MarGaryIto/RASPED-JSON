@@ -1,21 +1,27 @@
 <?php
-	$id = $_REQUEST['id'];
-	$nombre = $_POST['nombre'];
-	$descripcion = $_POST['descripcion'];
-	$existencias = $_POST['existencias'];
-	$precio_compra = $POST['precio_compra'];
-	$precio_venta = $POST['precio_venta'];*/
+	//se almacenan las variables a insertar
+	$nombre_personal = $_POST['nombre_personal'];
+	$apellido_m = $_POST['apellido_m'];
+	$apellido_p = $_POST['apellido_p'];
+	$contrasena = $POST['contrasena'];
 
+	//encriptacion md5 de contraseña
+
+	//uso de datos 
 	require_once ('mysql-login.php');
 
+	//ejecucion de conexion o devolucion de error
 	$conexion = mysqli_connect($server, $user, $pass,$bd)
 		or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
-	$query1  = "INSERT INTO contacto (nombre, telefono, email, direccion, web) VALUES ('$nombre','$telefono','$email','$direccion','$web')";
+	//generacion de consulta para insertar datos
+	$query  = "insert into personal(nombre_personal,apellido_m,apellido_p,contrasena)
+	values('$nombre_personal','$apellido_m','$apellido_p','$contrasena');
 
-	$resultado = mysqli_query($conexion, $query1);
+	//obtencion del resultado
+	$resultado = mysqli_query($conexion, $query);
 
-	// Si dio error
+	//evaluacion del resultado y devolucion de error en caso de serlo
 	if ($resultado == false) {
 		printf("Error: %s\n", mysqli_error($conexion));
 		die();
