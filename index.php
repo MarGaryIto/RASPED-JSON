@@ -122,7 +122,7 @@
                 while($row = mysqli_fetch_array($result)) 
                 { 
                   $horario = $row['hr_nombre'];
-                  echo "<option>horario</option>";
+                  echo "<option>" . $horario . "</option>";
                 }
                 ?>
                 
