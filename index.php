@@ -79,7 +79,7 @@
         
         <div class="col-lg-4">
         <h4>Insertar Personal</h4>
-          <form role="form-inline" action="content/agregar.php" method="post">
+          <form role="form" action="content/agregar.php" method="post">
             <div class="form-group"><!-- Nombre Personal -->
                 <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
             </div>
