@@ -9,14 +9,14 @@
 	$apellido_p = $_POST['apellido_p'];
 	$contrasena = $POST['contrasena'];
 	
-	echo $sede;
-	echo $cupo;
-	echo $lada;
-	echo $telefono;
-	echo $nombre_personal;
-	echo $apellido_m;
-	echo $apellido_p;
-	echo $contrasena;
+	echo $sede . "\n";
+	echo $cupo . "\n";
+	echo $lada . "\n";
+	echo $telefono . "\n";
+	echo $nombre_personal . "\n";
+	echo $apellido_m . "\n";
+	echo $apellido_p . "\n";
+	echo $contrasena . "\n";
 
 	//llamar mysql-login.php que contiene los datos de la base de datos para conectar
 	require_once ('mysql-login.php');
@@ -45,13 +45,13 @@
 	$contrasena = md5($contrasena);
 
 	//query para consulta de fk_cupo y fk_telefono
-	$query_select_fk_cupo = "SELECT id_cupo from cupos WHERE fk_sede = '$sede' and cupo = '$cupo'";
-	$query_select_fk_telefono = "SELECT id_telefono from telefonos WHERE fk_lada='$lada' and telefono='$telefono'";
+	$query_select_fk_cupo = "SELECT id_cupo from cupos WHERE fk_sede = $sede and cupo = $cupo";
+	$query_select_fk_telefono = "SELECT id_telefono from telefonos WHERE fk_lada=$lada and telefono=$telefono";
 
-	echo $query_select_fk_cupo;
-	echo $query_select_fk_telefono;
+	echo $query_select_fk_cupo . "\n";
+	echo $query_select_fk_telefono . "\n";
 	
-	/*//ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
+	//ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
 	if(!$result_fk_cupo = mysqli_query($conexion, $query_select_fk_cupo)) die('Error:'.mysqli_error());
 	if(!$result_fk_telefono = mysqli_query($conexion, $query_select_fk_telefono)) die('Error:'.mysqli_error());
 
@@ -63,7 +63,10 @@
 	while($row = mysqli_fetch_array($result_fk_cupo)) { 
 	    $fk_telefono=$row['id_telefono'];
 	}
-	
+
+	echo $fk_cupo . "\n";
+	echo $fk_telefono . "\n";
+	/*
 	//query para la inserccion de usuario
 	$query_insert_personal = "insert into 
 	personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
