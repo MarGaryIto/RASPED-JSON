@@ -250,12 +250,13 @@
       
     </div>
  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ 
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
  
     <!-- Todos los plugins JavaScript de Bootstrap -->
     <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
     <script src="bootstrap/js/npm.js"></script>
   </body>
 </html>
