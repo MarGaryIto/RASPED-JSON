@@ -60,7 +60,7 @@
 	values('$fk_cupo','$nombre_personal','$apellido_m','$apellido_p',
 	'$fk_telefono','$contrasena')";
 
-	$result_insert_personal = mysql_query($conexion,$sql);
+	$result_insert_personal = mysql_query($conexion,$query_insert_personal);
 	if (!$result_insert_personal){echo "Error al guardar";}else{echo "Guardado con exito";}
 	
 	mysqli_close($conexion)or die("Error en desconeccion");
