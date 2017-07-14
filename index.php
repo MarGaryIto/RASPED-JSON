@@ -25,19 +25,20 @@
         <h3 class="text-muted">Versión 1.0.0</h3>
       </div>
 
-      <!-- Jumbotron contenedor de titulo y descripcion -->
+      <!-- Jumbotron contenedor de titulo icono y descripcion -->
       <div class="jumbotron">
         <h1>RASPED</h1>
         <img src="https://k61.kn3.net/4/9/C/3/3/1/5A6.png" class="img-responsive" alt="Cinque Terre">
         <p class="lead">Espacio para la consulta y generación de archivos JSON, desde la base de datos remota de RASPED.</p>
       </div>
 
-      <!-- Encabezado y separador de Personal -->
+      <!--///////////////////////////////////////////////////////////////////////////-->
+      <!-- Personal Encabezado y separador -->
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#">Personal</a></li>
       </ul>
 
-      <!-- Tabla de Tres columnas -->
+      <!-- Tabla Personal de Tres columnas -->
       <div class="row">
 
         <!-- Todo el Personal -->
@@ -75,104 +76,129 @@
             </div>
           </form>
         </div>
-        
       </div><!-- /.row -->
         
-      <!-- Columna de tres elementos -->
-      <div class="row">
-        
-        <div class="col-lg-4">
-          <h4>Insertar Personal</h4>
-          <form class="form-inline" action="content/agregar.php" method="post">
-            <div class="form-group"><!-- Nombre Personal -->
-                <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
-            </div>
-            <div class="form-group"><!-- Apellido Paterno -->
-                <input type="text" name="apellido_p" id="apellido_p" class="form-control" placeholder="Apellido Paterno" required>
-            </div>
-            <div class="form-group"><!-- Apellido Materno -->
-                <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
-            </div>
-            <div class="form-group"><!-- Contraseña -->
-                <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
-            </div>
-            
-            <div class="form-group"><!-- Lada -->
-                <input type="number" min="1" max="999" name="lada" id="lada" class="form-control" placeholder="lada" required>
-            </div>
-            
-            <div class="form-group"><!-- Telefono -->
-                <input type="number" min="1" max="99999999" name="telefono" id="telefono" class="form-control" placeholder="telefono" required>
-            </div>
-            
-            <div class="form-group"><!-- Tipo Usuario -->
-              <label for="sel1">tipo de usuario</label>
-              <select class="form-control" id="sel1">
+      <!-- Formulario Agregar Usuario -->
+      <h4>Insertar Personal</h4>
+      <form class="form-inline" action="content/agregar.php" method="post">
+        <div class="form-group"><!-- Nombre Personal -->
+          <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
+        </div>
+        <div class="form-group"><!-- Apellido Paterno -->
+          <input type="text" name="apellido_p" id="apellido_p" class="form-control" placeholder="Apellido Paterno" required>
+        </div>
+        <div class="form-group"><!-- Apellido Materno -->
+          <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
+        </div>
+        <div class="form-group"><!-- Contraseña -->
+          <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
+            </div>    
+        <div class="form-group"><!-- Lada -->
+          <input type="number" min="1" max="999" name="lada" id="lada" class="form-control" placeholder="lada" required>
+        </div>   
+        <div class="form-group"><!-- Telefono -->
+          <input type="number" min="1" max="99999999" name="telefono" id="telefono" class="form-control" placeholder="telefono" required>
+        </div>    
+        <div class="form-group"><!-- Sede -->
+          <input type="number" min="1" max="99" name="sede" id="sede" class="form-control" placeholder="sede" required>
+        </div>    
+        <div class="form-group"><!-- Cupo -->
+          <input type="number" min="1" max="999999" name="sede" id="sede" class="form-control" placeholder="sede" required>
+        </div>
+        <div class="form-group"><!-- Tipo Usuario -->
+          <label for="sel1">tipo de usuario</label>
+          <select class="form-control" id="sel1">
                 
-                <?php
-                require_once ('content/mysql-login.php');
-                //Creamos la conexión
-                $conexion = mysqli_connect($server, $user, $pass,$bd) 
-                or die("Ha sucedido un error inexperado en la conexion de la base de datos");
-                //generamos la consulta
-                $sql = "SELECT hr_nombre from horarios";
-                mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
-                if(!$result = mysqli_query($conexion, $sql)) die();
-                $clientes = array(); //creamos un array
-                while($row = mysqli_fetch_array($result)) 
-                { 
-                  $horario = $row['hr_nombre'];
-                  echo "<option>" . $horario . "</option>";
-                }
-                ?>
+            <?php
+
+              //pedir datos de base de datos
+              require_once ('content/mysql-login.php');
+
+              //Creamos la conexión
+              $conexion = mysqli_connect($server, $user, $pass,$bd) 
+              or die("Ha sucedido un error inexperado en la conexion de la base de datos");
+
+              //generamos la consulta
+              $sql = "SELECT hr_nombre from horarios";
+
+              //estándar de codificación Unicode Transformation 8 bits para compatibilidad ASCII
+              mysqli_set_charset($conexion, "utf8");
+
+              //arrojar error de consulta en caso de serlo asi
+              if(!$result = mysqli_query($conexion, $sql)) die();
+
+              //extraccion de registros mediante un ciclo while
+              while($row = mysqli_fetch_array($result)){
+                //extraccion y almacenamiento
+                $horario = $row['hr_nombre'];
+                //impresion de registro en formato html
+                echo "<option>" . $horario . "</option>";
+              }
+            ?>
                 
-              </select>
-            </div>
+          </select>
+        </div>
             
-            <div class="form-group"><!-- Tipo Usuario -->
-              <label for="sel1">puesto</label>
-              <select class="form-control" id="sel1">
+        <div class="form-group"><!-- Tipo Usuario -->
+          <label for="sel1">puesto</label>
+          <select class="form-control" id="sel1">
                 
-                <?php
-                //generamos la consulta
-                $sql = "SELECT nombre_puesto from puestos";
-                mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
-                if(!$result = mysqli_query($conexion, $sql)) die();
-                $clientes = array(); //creamos un array
-                while($row = mysqli_fetch_array($result)) 
-                { 
-                  $puesto = $row['nombre_puesto'];
-                  echo "<option>" . $puesto . "</option>";
-                }
-                //desconectamos la base de datos
-                $close = mysqli_close($conexion) 
-                or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
-                ?>
+            <?php
+
+              //generamos la consulta
+              $sql = "SELECT nombre_puesto from puestos";
+
+              //arrojo de error al ejecutar del query o consulta en caso de serlo
+              if(!$result = mysqli_query($conexion, $sql)) die();
+
+              //extraccion de registros por un ciclo
+              while($row = mysqli_fetch_array($result)){ 
+                //amacenamiento de registro
+                $puesto = $row['nombre_puesto'];
+                //impresion de registro en formato html
+                echo "<option>" . $puesto . "</option>";
+              }
+
+              //desconeccion de la base de datos
+              $close = mysqli_close($conexion) or die('Error: '.mysqli_error());
+            ?>
                 
-              </select>
-            </div>
+          </select>
+        </div>
             
-            <button type="submit" class="btn btn-primary">Insertar</button>
-          </form>
-        </div><!-- /.col-lg-4 -->
-      </div>
-        
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="active"><a href="#">Personal</a></li>
-        </ul>
+        <button type="submit" class="btn btn-primary">Insertar</button>
+      </form>
+
+      <!--///////////////////////////////////////////////////////////////////////////-->
+      <!-- Horarios Encabezado y separador -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#">Personal</a></li>
+      </ul>
       
-        <div class="row">
+      <!-- Tabla Horarios de Tres columnas -->
+      <div class="row">
+
+        <!-- Todos Horarios -->
         <div class="col-lg-4">
           <h4>Horarios</h4>
           <a href="content/horarios.php" class="btn btn-primary" role="button">Puestos</a>
-        </div><!-- /.col-lg-4 -->
+        </div>
+      </div>
+
+      <!--///////////////////////////////////////////////////////////////////////////-->
+      <!-- Puestos Encabezado y separador -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#">Personal</a></li>
+      </ul>
         
+      <!-- Tabla Puestos de Tres columnas -->
+      <div class="row">
+        <!-- Todos Puestos -->
         <div class="col-lg-4">
           <h4>Puestos</h4>
           <a href="content/puestos.php" class="btn btn-primary" role="button">Puestos</a>
-        </div><!-- /.col-lg-4 -->
-        
-      </div><!-- /.row -->
+        </div>
+      </div>
       
       <!-- Descripcion final tipo footer -->
       <footer class="footer">
