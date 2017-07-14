@@ -8,6 +8,7 @@
 	$apellido_m = $_POST['apellido_m'];
 	$apellido_p = $_POST['apellido_p'];
 	$contrasena = $POST['contrasena'];
+	
 
 	//llamar mysql-login.php que contiene los datos de la base de datos para conectar
 	require_once ('mysql-login.php');
@@ -62,5 +63,7 @@
 	$result = mysqli_query($conexion, $query_insert_personal) or die('Error:'.mysqli_error());
 	
 	mysqli_close($conexion)or die("Error en desconeccion");
+	
+	echo "adiccion exitosa";
 	
 ?>
