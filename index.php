@@ -82,19 +82,28 @@
         
       <!-- Formulario Agregar Usuario -->
       <h4>Insertar Personal</h4>
-      <form class="form-inline" action="content/agregar.php" method="post">
-        <div class="form-group"><!-- Nombre Personal -->
-          <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
+      <form action="/content/agregar.php" method="post">
+        <!-- Primer fila -->
+        <div class="row">
+          <div class="col-3"><!-- Nombre Personal -->
+            <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
+          </div>
+          <div class="col-3"><!-- Apellido Paterno -->
+            <input type="text" name="apellido_p" id="apellido_p" class="form-control" placeholder="Apellido Paterno" required>
+          </div>
+          <div class="col-3"><!-- Apellido Materno -->
+            <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
+          </div>
         </div>
-        <div class="form-group"><!-- Apellido Paterno -->
-          <input type="text" name="apellido_p" id="apellido_p" class="form-control" placeholder="Apellido Paterno" required>
+        <!-- Segunda fila -->
+        <div class="row">
+          <div class="col-1"><!-- Contraseña -->
+            <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
+          </div>   
         </div>
-        <div class="form-group"><!-- Apellido Materno -->
-          <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
-        </div></br>
-        <div class="form-group"><!-- Contraseña -->
-          <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
-            </div>    
+
+        <!-- Tercera fila -->
+        <div class="row"></div>
         <div class="form-group"><!-- Lada -->
           <input type="number" min="1" max="999" name="lada" id="lada" class="form-control" placeholder="lada" required>
         </div>   
@@ -105,7 +114,7 @@
           <input type="number" min="1" max="99" name="sede" id="sede" class="form-control" placeholder="sede" required>
         </div>    
         <div class="form-group"><!-- Cupo -->
-          <input type="number" min="1" max="999999" name="sede" id="sede" class="form-control" placeholder="sede" required>
+          <input type="number" min="1" max="999999" name="sede" id="sede" class="form-control" placeholder="cupo" required>
         </div>
         <div class="form-group"><!-- Tipo Usuario -->
           <label for="sel1">tipo de usuario</label>
