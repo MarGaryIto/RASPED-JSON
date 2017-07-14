@@ -81,114 +81,107 @@
       </div><!-- /.row -->
         
       <!-- Formulario Agregar Usuario -->
-      <div class="row">
-  <div class="col-2">
-    <input type="text" class="form-control" placeholder=".col-2">
-  </div>
-  <div class="col-3">
-    <input type="text" class="form-control" placeholder=".col-3">
-  </div>
-  <div class="col-4">
-    <input type="text" class="form-control" placeholder=".col-4">
-  </div>
-</div>
       <h4>Insertar Personal</h4>
-      <form action="/content/agregar.php" method="post">
-        <!-- Primer fila -->
-        <div class="row">
-          <div class="col-3"><!-- Nombre Personal -->
-            <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
-          </div>
-          <div class="col-3"><!-- Apellido Paterno -->
-            <input type="text" name="apellido_p" id="apellido_p" class="form-control" placeholder="Apellido Paterno" required>
-          </div>
-          <div class="col-3"><!-- Apellido Materno -->
-            <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
-          </div>
-        </div>
-        <!-- Segunda fila -->
-        <div class="row">
-          <div class="col-1"><!-- Contraseña -->
-            <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
-          </div>   
-        </div>
+      <table class="table">
+        <form action="/content/agregar.php" method="post">
 
-        <!-- Tercera fila -->
-        <div class="row"></div>
-        <div class="form-group"><!-- Lada -->
-          <input type="number" min="1" max="999" name="lada" id="lada" class="form-control" placeholder="lada" required>
-        </div>   
-        <div class="form-group"><!-- Telefono -->
-          <input type="number" min="1" max="99999999" name="telefono" id="telefono" class="form-control" placeholder="telefono" required>
-        </div>    
-        <div class="form-group"><!-- Sede -->
-          <input type="number" min="1" max="99" name="sede" id="sede" class="form-control" placeholder="sede" required>
-        </div>    
-        <div class="form-group"><!-- Cupo -->
-          <input type="number" min="1" max="999999" name="sede" id="sede" class="form-control" placeholder="cupo" required>
-        </div>
-        <div class="form-group"><!-- Tipo Usuario -->
-          <label for="sel1">tipo de usuario</label>
-          <select class="form-control" id="sel1">
-                
-            <?php
+          <!-- Primer fila -->
+          <tr>
+            <td><!-- Nombre Personal -->
+              <input type="text" name="nombre_personal" id="nombre_personal" class="form-control" placeholder="Nombre" required>
+            </td>
+            <td><!-- Apellido Paterno -->
+              <input type="text" name="apellido_p" id="apellido_p" class="form-control" placeholder="Apellido Paterno" required>
+            </td>
+            <td><!-- Apellido Materno -->
+              <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
+            </td>
+          </tr>
 
-              //pedir datos de base de datos
-              require_once ('content/mysql-login.php');
+          <!-- Segunda fila -->
+          <tr>
+            <td><!-- Contraseña -->
+              <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
+            </td>   
+            <td><!-- Lada -->
+              <input type="number" min="1" max="999" name="lada" id="lada" class="form-control" placeholder="lada" required>
+            </td>   
+            <td><!-- Telefono -->
+              <input type="number" min="1" max="99999999" name="telefono" id="telefono" class="form-control" placeholder="telefono" required>
+            </td>    
+            <td><!-- Sede -->
+              <input type="number" min="1" max="99" name="sede" id="sede" class="form-control" placeholder="sede" required>
+            </td>    
+            <td><!-- Cupo -->
+              <input type="number" min="1" max="999999" name="sede" id="sede" class="form-control" placeholder="cupo" required>
+            </td>
+          </tr>
 
-              //Creamos la conexión
-              $conexion = mysqli_connect($server, $user, $pass,$bd) 
-              or die("Ha sucedido un error inexperado en la conexion de la base de datos");
+          <!-- Tercera fila -->
+          <tr>
+            <td><!-- Tipos de Usuario -->
+              <label for="sel1">tipo de usuario</label>
+              <select class="form-control" id="sel1">
+                    
+                <?php
 
-              //generamos la consulta
-              $sql = "SELECT hr_nombre from horarios";
+                  //pedir datos de base de datos
+                  require_once ('content/mysql-login.php');
 
-              //estándar de codificación Unicode Transformation 8 bits para compatibilidad ASCII
-              mysqli_set_charset($conexion, "utf8");
+                  //Creamos la conexión
+                  $conexion = mysqli_connect($server, $user, $pass,$bd) 
+                  or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
-              //arrojar error de consulta en caso de serlo asi
-              if(!$result = mysqli_query($conexion, $sql)) die();
+                  //generamos la consulta
+                  $sql = "SELECT hr_nombre from horarios";
 
-              //extraccion de registros mediante un ciclo while
-              while($row = mysqli_fetch_array($result)){
-                //extraccion y almacenamiento
-                $horario = $row['hr_nombre'];
-                //impresion de registro en formato html
-                echo "<option>" . $horario . "</option>";
-              }
-            ?>
-                
-          </select>
-        </div>
-            
-        <div class="form-group"><!-- Tipo Usuario -->
-          <label for="sel1">puesto</label>
-          <select class="form-control" id="sel1">
-                
-            <?php
+                  //estándar de codificación Unicode Transformation 8 bits para compatibilidad ASCII
+                  mysqli_set_charset($conexion, "utf8");
 
-              //generamos la consulta
-              $sql = "SELECT nombre_puesto from puestos";
+                  //arrojar error de consulta en caso de serlo asi
+                  if(!$result = mysqli_query($conexion, $sql)) die();
 
-              //arrojo de error al ejecutar del query o consulta en caso de serlo
-              if(!$result = mysqli_query($conexion, $sql)) die();
+                  //extraccion de registros mediante un ciclo while
+                  while($row = mysqli_fetch_array($result)){
+                    //extraccion y almacenamiento
+                    $horario = $row['hr_nombre'];
+                    //impresion de registro en formato html
+                    echo "<option>" . $horario . "</option>";
+                  }
+                ?>
+                    
+              </select>
+            </td>
+            <td><!-- Puestos-->
+              <label for="sel1">Puesto</label>
+              <select class="form-control" id="sel1">
+                    
+                <?php
 
-              //extraccion de registros por un ciclo
-              while($row = mysqli_fetch_array($result)){ 
-                //amacenamiento de registro
-                $puesto = $row['nombre_puesto'];
-                //impresion de registro en formato html
-                echo "<option>" . $puesto . "</option>";
-              }
+                  //generamos la consulta
+                  $sql = "SELECT nombre_puesto from puestos";
 
-              //desconeccion de la base de datos
-              $close = mysqli_close($conexion) or die('Error: '.mysqli_error());
-            ?>
-                
-          </select>
-        </div></br>
-        <button type="submit" class="btn btn-primary">Insertar</button>
-      </form>
+                  //arrojo de error al ejecutar del query o consulta en caso de serlo
+                  if(!$result = mysqli_query($conexion, $sql)) die();
+
+                  //extraccion de registros por un ciclo
+                  while($row = mysqli_fetch_array($result)){ 
+                    //amacenamiento de registro
+                    $puesto = $row['nombre_puesto'];
+                    //impresion de registro en formato html
+                    echo "<option>" . $puesto . "</option>";
+                  }
+
+                  //desconeccion de la base de datos
+                  $close = mysqli_close($conexion) or die('Error: '.mysqli_error());
+                ?>
+                    
+              </select>
+            </td>
+          </tr>
+          <button type="submit" class="btn btn-primary">Insertar</button>
+        </form>
+      </table>
 
       <!--///////////////////////////////////////////////////////////////////////////-->
       <!-- Horarios Encabezado y separador -->
