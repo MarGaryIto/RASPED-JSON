@@ -7,7 +7,8 @@
     <title>RASPED</title>
  
     <!-- CSS de Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://goo.gl/ixnP5g"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -52,7 +53,8 @@
           <h4>Personal por Telefono</h4>
           <form role="form" action="content/personal_tel.php" method="post">
             <div class="input-group">
-              <input type="text" name="telefono" id="telefono" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$" class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
+              <input type="text" name="telefono" id="telefono" pattern="^[9|8|7|6|5|4|3|2|1|0]\d{9}$"
+                class="form-control" id="ejemplo_email_1" placeholder="Telefono" required>
               <div class="input-group-btn">
                 <button class="btn btn-default" type="submit">
                   <span class="glyphicon glyphicon-search"></span>
@@ -89,7 +91,7 @@
         </div>
         <div class="form-group"><!-- Apellido Materno -->
           <input type="text" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
-        </div>
+        </div></br>
         <div class="form-group"><!-- Contraseña -->
           <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
             </div>    
@@ -164,8 +166,7 @@
             ?>
                 
           </select>
-        </div>
-            
+        </div></br>
         <button type="submit" class="btn btn-primary">Insertar</button>
       </form>
 
@@ -183,7 +184,7 @@
           <h4>Horarios</h4>
           <a href="content/horarios.php" class="btn btn-primary" role="button">Puestos</a>
         </div>
-      </div>
+      </div></br>
 
       <!--///////////////////////////////////////////////////////////////////////////-->
       <!-- Puestos Encabezado y separador -->
@@ -198,7 +199,7 @@
           <h4>Puestos</h4>
           <a href="content/puestos.php" class="btn btn-primary" role="button">Puestos</a>
         </div>
-      </div>
+      </div></br>
       
       <!-- Descripcion final tipo footer -->
       <footer class="footer">
