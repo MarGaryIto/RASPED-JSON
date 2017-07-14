@@ -122,7 +122,7 @@
                 <input type="number" min="1" max="99" name="sede" id="sede" class="form-control" placeholder="sede" required>
               </td>    
               <td><!-- Cupo -->
-                <input type="number" min="1" max="999999" name="sede" id="sede" class="form-control" placeholder="cupo" required>
+                <input type="number" min="1" max="999999" name="cupo" id="cupo" class="form-control" placeholder="cupo" required>
               </td>
             </tr>
           </table>
