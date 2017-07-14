@@ -56,12 +56,10 @@
 	$query_insert_personal = "insert into 
 	personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
 	fk_telefono,contrasena)
-	values('$fk_cupo','$nombre_personal','$apellido_m','$apellido_p',
-	'$fk_telefono','$contrasena')";
+	values($fk_cupo,'$nombre_personal','$apellido_m','$apellido_p',
+	$fk_telefono,'$contrasena')";
 
-	echo $query_insert_personal;
-	$result_insert_personal = mysql_query($conexion,$query_insert_personal);
-	if (!$result_insert_personal){echo "Error al guardar";}else{echo "Guardado con exito";}
+	$result = mysqli_query($conexion, $query_insert_personal) or die('Error:'.mysqli_error());
 	
 	mysqli_close($conexion)or die("Error en desconeccion");
 	
