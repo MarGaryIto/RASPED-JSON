@@ -9,6 +9,14 @@
 	$apellido_p = $_POST['apellido_p'];
 	$contrasena = $POST['contrasena'];
 	
+	echo $sede;
+	echo $cupo;
+	echo $lada;
+	echo $telefono;
+	echo $nombre_personal;
+	echo $apellido_m;
+	echo $apellido_p;
+	echo $contrasena;
 
 	//llamar mysql-login.php que contiene los datos de la base de datos para conectar
 	require_once ('mysql-login.php');
@@ -39,8 +47,11 @@
 	//query para consulta de fk_cupo y fk_telefono
 	$query_select_fk_cupo = "SELECT id_cupo from cupos WHERE fk_sede = '$sede' and cupo = '$cupo'";
 	$query_select_fk_telefono = "SELECT id_telefono from telefonos WHERE fk_lada='$lada' and telefono='$telefono'";
+
+	echo $query_select_fk_cupo;
+	echo $query_select_fk_telefono;
 	
-	//ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
+	/*//ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
 	if(!$result_fk_cupo = mysqli_query($conexion, $query_select_fk_cupo)) die('Error:'.mysqli_error());
 	if(!$result_fk_telefono = mysqli_query($conexion, $query_select_fk_telefono)) die('Error:'.mysqli_error());
 
@@ -61,7 +72,7 @@
 	'$fk_telefono','$contrasena')";
 
 	$result_insert_personal = mysql_query($conexion,$query_insert_personal);
-	if (!$result_insert_personal){echo "Error al guardar";}else{echo "Guardado con exito";}
+	if (!$result_insert_personal){echo "Error al guardar";}else{echo "Guardado con exito";}*/
 	
 	mysqli_close($conexion)or die("Error en desconeccion");
 	
