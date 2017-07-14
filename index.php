@@ -81,6 +81,17 @@
       </div><!-- /.row -->
         
       <!-- Formulario Agregar Usuario -->
+      <div class="row">
+  <div class="col-2">
+    <input type="text" class="form-control" placeholder=".col-2">
+  </div>
+  <div class="col-3">
+    <input type="text" class="form-control" placeholder=".col-3">
+  </div>
+  <div class="col-4">
+    <input type="text" class="form-control" placeholder=".col-4">
+  </div>
+</div>
       <h4>Insertar Personal</h4>
       <form action="/content/agregar.php" method="post">
         <!-- Primer fila -->
