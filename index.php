@@ -98,11 +98,15 @@
             </td>
           </tr>
 
-          <!-- Segunda fila -->
+          <!--Segunda fila -->
           <tr>
             <td><!-- Contraseña -->
               <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="contrasena" required>
-            </td>   
+            </td> 
+          </tr>
+
+          <!-- Tercera fila -->
+          <tr>
             <td><!-- Lada -->
               <input type="number" min="1" max="999" name="lada" id="lada" class="form-control" placeholder="lada" required>
             </td>   
@@ -117,7 +121,7 @@
             </td>
           </tr>
 
-          <!-- Tercera fila -->
+          <!-- Cuarta fila -->
           <tr>
             <td><!-- Tipos de Usuario -->
               <label for="sel1">tipo de usuario</label>
@@ -179,7 +183,14 @@
               </select>
             </td>
           </tr>
-          <button type="submit" class="btn btn-primary">Insertar</button>
+
+          <!-- Quinta fila -->
+          <tr align="center">
+            <td>
+              <button type="submit" class="btn btn-primary">Insertar</button>
+            </td>
+          </tr>
+
         </form>
       </table>
 
