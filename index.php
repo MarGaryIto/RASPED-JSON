@@ -87,7 +87,7 @@
       <!-- Formulario Agregar Usuario -->
       <h4>Insertar Personal</h4>
             
-      <form action="/content/agregar_personal.php" method="post">
+      <form action="/content/insertar_personal.php" method="post">
       
         <!-- Primer fila -->
         <table class="table">
@@ -269,7 +269,7 @@
        <!-- Formulario Agregar Asistencia o retardo -->
       <h4>Insertar Asistencia</h4>
             
-      <form action="/content/agregar_asistencia.php" method="post">
+      <form action="/content/insertar_asistencia.php" method="post">
       
         <!-- Primer fila -->
         <table class="table">
