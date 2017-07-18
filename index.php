@@ -84,7 +84,7 @@
       <!-- Formulario Agregar Usuario -->
       <h4>Insertar Personal</h4>
             
-      <form action="/content/agregar.php" method="post">
+      <form action="/content/agregar_personal.php" method="post">
       
         <!-- Primer fila -->
         <table class="table">
@@ -201,7 +201,7 @@
         </td>
       </tr>
     </table>
-      </form>
+  </form>
 
       <!--///////////////////////////////////////////////////////////////////////////-->
       <!-- Horarios Encabezado y separador -->
@@ -233,7 +233,64 @@
           <a href="content/puestos.php" class="btn btn-primary" role="button">Puestos</a>
         </div>
       </div></br>
+
+      <!--///////////////////////////////////////////////////////////////////////////-->
+      <!-- Asistencia y retardos Encabezado y separador -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#">Asistencias</a></li>
+      </ul>
+
+      <!-- Tabla Asistencias y retardos de Tres columnas -->
+      <div class="row">
+
+        <!-- Todas las asistencias -->
+        <div class="col-lg-4">
+          <h4>Todas las asistencias</h4>
+          <a href="content/asistencias.php" class="btn btn-primary" role="button">Consultar</a>
+        </div>
+
+        <!-- Todos los retardos-->
+        <div class="col-lg-4">
+          <h4>Todas los retardos</h4>
+          <a href="content/retardos.php" class="btn btn-primary" role="button">Consultar</a>
+        </div>
+
+        <!-- Todass las faltas-->
+        <div class="col-lg-4">
+          <h4>Todas las faltas</h4>
+          <a href="content/faltas.php" class="btn btn-primary" role="button">Consultar</a>
+        </div>
+
+      </div>
+
+       <!-- Formulario Agregar Asistencia o retardo -->
+      <h4>Insertar Asistencia</h4>
+            
+      <form action="/content/agregar_asistencia.php" method="post">
       
+        <!-- Primer fila -->
+        <table class="table">
+          <tr>
+            <td><!-- fk de personal -->
+              <input type="number" min="1" max="99" step="1" name="fk_personal" id="fk_personal" class="form-control" placeholder="fk_personal" required>
+            </td>
+            <td><!-- fecha -->
+              <input type="date" name="fecha" id="fecha" class="form-control" placeholder="fecha" required>
+            </td>
+            <td><!-- hr_entrada -->
+              <input type="time" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
+            </td>
+          </tr>
+        </table>
+
+        <table class="table">
+          <tr align="center">
+            <td>
+              <button type="submit" class="btn btn-primary">Insertar</button>
+            </td>
+          </tr>
+        </table>
+      </form>
       <!-- Descripcion final tipo footer -->
       <footer class="footer">
         <p>&copy; 2017 RASPED - JSON - Android - 1715110196@utec-tgo.edu.mx.</p>
