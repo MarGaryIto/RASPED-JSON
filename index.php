@@ -13,6 +13,9 @@
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Asignar icono personalizado al sitio -->
+    <link rel="icon" type="image/png" href="https://k61.kn3.net/4/9/C/3/3/1/5A6.png" />
   </head>
   
   <!-- Contenido de la paguina -->
