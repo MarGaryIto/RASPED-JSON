@@ -47,14 +47,15 @@
   
   mysqli_close($conexion)or die("Error en desconeccion");
   
+  echo "tiempo: ";
   echo $tiempo;
-  echo "\n";
+  echo "fk_personal: ";
   echo $fk_personal;
-  echo "\n";
+  echo "fecha: ";
   echo $fecha;
-  echo "\n";
+  echo "hora: ";
+  echo $hora;
+  echo "fk_hora: ";
   echo $fk_fecha;
-  echo "\n";
-  
 ?>
 
