@@ -15,7 +15,7 @@
     <link href="bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
 
     <!-- Asignar icono personalizado al sitio -->
-    <link rel="icon" type="image/png" href="https://k61.kn3.net/4/9/C/3/3/1/5A6.png" />
+    <link rel="icon" type="image/png" href="https://image.ibb.co/hksXN5/RASPED.png" />
   </head>
   
   <!-- Contenido de la paguina -->
