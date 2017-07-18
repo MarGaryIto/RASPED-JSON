@@ -270,8 +270,23 @@
       <h4>Insertar Asistencia</h4>
             
       <form action="/content/insertar_asistencia.php" method="post">
+
+        <!-- Primera fila -->
+        <table class="table">
+          <tr>
+            <td><!-- Tipos de Usuario -->
+              <label for="sel1">tipo de usuario</label>
+              <select class="form-control" id="sel1">
+                <option>hr_entrada</option>
+                <option>hr_comida_i</option>
+                <option>hr_comida_f</option>
+                <option>hr_salida</option>
+              </select>
+            </td>
+          </tr>
+        </table>
       
-        <!-- Primer fila -->
+        <!-- Segunda fila -->
         <table class="table">
           <tr>
             <td><!-- fk de personal -->
@@ -280,12 +295,13 @@
             <td><!-- fecha -->
               <input type="date" name="fecha" id="fecha" class="form-control" placeholder="fecha" required>
             </td>
-            <td><!-- hr_entrada -->
-              <input type="time" name="apellido_m" id="apellido_m" class="form-control" placeholder="Apellido Materno" required>
+            <td><!-- hora -->
+              <input type="time" name="hora" id="hora" class="form-control" placeholder="Apellido Materno" required>
             </td>
           </tr>
         </table>
 
+        <!-- Tegunda columna -->
         <table class="table">
           <tr align="center">
             <td>
