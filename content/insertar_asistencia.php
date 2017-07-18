@@ -46,9 +46,9 @@
   //captura de fk_cupo mediante ciclo while
   if (mysql_num_rows($result_id_asistencia)>0)
 {
-print(Exite al menos un registro);
+echo "Exite al menos un registro";
 } else {
-print(No Existen registros);
+echo "No Existen registros";
 }
   /*//query para la inserccion de usuario
   $query_insert_fecha = "insert ignore into 
