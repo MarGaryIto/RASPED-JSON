@@ -276,7 +276,7 @@
           <tr>
             <td><!-- Tipos de Usuario -->
               <label for="sel1">tipo de usuario</label>
-              <select class="form-control" id="sel1">
+              <select class="form-control" id="tiempo" name="tiempo">
                 <option>hr_entrada</option>
                 <option>hr_comida_i</option>
                 <option>hr_comida_f</option>
