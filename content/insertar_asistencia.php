@@ -36,8 +36,24 @@
       $fk_fecha=$row['id_fecha'];
   }
   
+  $query_select_asistencia = "SELECT id_asistencia from asistencias WHERE
+  fk_personal = '$fk_personal' and 
+  fk_fecha = '$fk_fecha'"
+
+  //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
+  if(!$result_id_asistencia = mysqli_query($conexion, $query_select_asistencia)) die('Error:'.mysqli_error());
+
+  //captura de fk_cupo mediante ciclo while
+  $row = mysqli_fetch_array($result_id_asistencia);
+
+  echo $row;
+
   /*//query para la inserccion de usuario
-  $query_insert_registro = "insert into 
+  $query_insert_fecha = "insert ignore into 
+  asistencias(fk_personal,fk_fecha)
+  values('$fk_personal',$fk_fecha)";
+
+  $query_insert_tiempo = "insert into 
   personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
   fk_telefono,contrasena)
   values($fk_cupo,'$nombre_personal','$apellido_m','$apellido_p',
