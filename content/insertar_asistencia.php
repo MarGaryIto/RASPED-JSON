@@ -38,7 +38,7 @@
   
   $query_select_asistencia = "SELECT id_asistencia from asistencias WHERE
   fk_personal = '$fk_personal' and 
-  fk_fecha = '$fk_fecha'"
+  fk_fecha = '$fk_fecha'";
 
   //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_id_asistencia = mysqli_query($conexion, $query_select_asistencia)) die('Error:'.mysqli_error());
