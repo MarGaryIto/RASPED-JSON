@@ -289,8 +289,8 @@
         <!-- Segunda fila -->
         <table class="table">
           <tr>
-            <td><!-- fk de personal -->
-              <input type="number" min="1" max="99" step="1" name="fk_personal" id="fk_personal" class="form-control" placeholder="fk_personal" required>
+            <td><!-- cupo -->
+              <input type="number" min="100000" max="999999" step="1" name="cupo" id="cupo" class="form-control" placeholder="cupo" required>
             </td>
             <td><!-- fecha -->
               <input type="date" name="fecha" id="fecha" class="form-control" placeholder="fecha" required>
