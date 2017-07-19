@@ -42,12 +42,11 @@
   if(!$result_id_asistencia = mysqli_query($conexion, $query_select_asistencia)) die('Error:'.mysqli_error());
 
   //captura de fk_cupo mediante ciclo while
-  if (mysql_num_rows($result_id_asistencia)>0)
-{
-echo "Exite al menos un registro";
-} else {
-echo "No Existen registros";
-}
+  while($row = mysqli_fetch_array($result_id_asistencia)) { 
+      $asistencias = true; ;
+  }
+
+  echo $asistencias;
   /*//query para la inserccion de usuario
   $query_insert_fecha = "insert ignore into 
   asistencias(fk_personal,fk_fecha)
