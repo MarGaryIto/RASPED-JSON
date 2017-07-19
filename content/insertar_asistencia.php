@@ -47,7 +47,16 @@
       $asistencias = "true";
   }
 
-  echo $asistencias;
+  if($asistencias == "false"){
+    $query_agrega_personal = "insert into asistencias(fk_personal,fk_fecha) values ('$fk_personal','$fk_fecha')";
+    $result_agrega_personal = mysqli_query($conexion, $query_agrega_personal) or die('Error:'.mysqli_error());
+  }
+
+  $query_agrega_registro = "insert into asistencias (fk_personal," . $tiempo . ") values ('$fk_personal','$hora')";
+  $result_agrega_registro = mysqli_query($conexion, $query_agrega_registro) or die('Error:'.mysqli_error());
+
+  echo $query_agrega_registro;
+
   /*//query para la inserccion de usuario
   $query_insert_fecha = "insert ignore into 
   asistencias(fk_personal,fk_fecha)
