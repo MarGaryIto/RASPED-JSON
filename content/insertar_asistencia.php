@@ -38,9 +38,7 @@
   
   $query_select_asistencia = "SELECT id_asistencias from asistencias WHERE fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
 
-  echo $query_select_asistencia;
-
-  /*//ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
+  //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_id_asistencia = mysqli_query($conexion, $query_select_asistencia)) die('Error:'.mysqli_error());
 
   //captura de fk_cupo mediante ciclo while
@@ -49,7 +47,7 @@
 echo "Exite al menos un registro";
 } else {
 echo "No Existen registros";
-}*/
+}
   /*//query para la inserccion de usuario
   $query_insert_fecha = "insert ignore into 
   asistencias(fk_personal,fk_fecha)
