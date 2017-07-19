@@ -52,23 +52,10 @@
     $result_agrega_personal = mysqli_query($conexion, $query_agrega_personal) or die('Error:'.mysqli_error());
   }
 
-  $query_agrega_registro = "insert into asistencias (fk_personal," . $tiempo . ") values ('$fk_personal','$hora')";
+  $query_agrega_registro = "update asistencias set " . $tiempo . "='$hora' where fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
   $result_agrega_registro = mysqli_query($conexion, $query_agrega_registro) or die('Error:'.mysqli_error());
 
   echo $query_agrega_registro;
-
-  /*//query para la inserccion de usuario
-  $query_insert_fecha = "insert ignore into 
-  asistencias(fk_personal,fk_fecha)
-  values('$fk_personal',$fk_fecha)";
-
-  $query_insert_tiempo = "insert into 
-  personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
-  fk_telefono,contrasena)
-  values($fk_cupo,'$nombre_personal','$apellido_m','$apellido_p',
-  $fk_telefono,'$contrasena')";
-
-  $result = mysqli_query($conexion, $query_insert_personal) or die('Error:'.mysqli_error());*/
   
   mysqli_close($conexion)or die("Error en desconeccion");
   
