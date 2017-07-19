@@ -269,7 +269,7 @@
        <!-- Formulario Agregar Asistencia o retardo -->
       <h4>Insertar Asistencia</h4>
             
-      <form action="/content/insertar_asistencia.php" method="post">
+      <form action="/content/insertar_asistencia.php" method="get">
 
         <!-- Primera fila -->
         <table class="table">
