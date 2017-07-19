@@ -1,7 +1,7 @@
 <?php
   //se almacenan las variables a insertar
   $tiempo = $_POST['tiempo'];
-  $fk_personal = $_POST['fk_personal'];
+  $cupo = $_POST['cupo'];
   $fecha = $_POST['fecha'];
   $hora = $_POST['hora'];
   $fk_fecha = '';
@@ -34,6 +34,17 @@
   //captura de fk_cupo mediante ciclo while
   while($row = mysqli_fetch_array($result_fk_fecha)) { 
       $fk_fecha=$row['id_fecha'];
+  }
+
+  //query para consulta de fk_cupo y fk_telefono
+  $query_select_fk_personal = "SELECT P.id_personal from cupos C, personal P WHERE P.fk_cupo = C.id_cupo and concat(C.fk_sede,C.cupo) = '$cupo'";
+  
+  //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
+  if(!$result_fk_personal = mysqli_query($conexion, $query_select_fk_personal)) die('Error:'.mysqli_error());
+
+  //captura de fk_cupo mediante ciclo while
+  while($row = mysqli_fetch_array($result_fk_personal)) { 
+      $fk_personal=$row['id_personal'];
   }
   
   $query_select_asistencia = "SELECT id_asistencias from asistencias WHERE fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
