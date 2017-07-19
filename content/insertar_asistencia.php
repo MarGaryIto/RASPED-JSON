@@ -42,8 +42,9 @@
   if(!$result_id_asistencia = mysqli_query($conexion, $query_select_asistencia)) die('Error:'.mysqli_error());
 
   //captura de fk_cupo mediante ciclo while
+  $asistencias = false;
   while($row = mysqli_fetch_array($result_id_asistencia)) { 
-      $asistencias = true; ;
+      $asistencias = true;
   }
 
   echo $asistencias;
