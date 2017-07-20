@@ -20,10 +20,10 @@
   mysqli_set_charset($conexion, "utf8");
 
   //consultas - inserccion de cupos y telefonos
-  $query_insert_fecha= "insert ignore into fechas(fecha) values ('$fecha')";
+  $query_insert_fecha= "insert into fechas(fecha) values ('$fecha')";
 
   //ejecucion - inserccion de cupos y telefonos
-  $result = mysqli_query($conexion, $query_insert_fecha) or die('result Error:'.mysqli_error());
+  $result_insert_fecha = mysqli_query($conexion, $query_insert_fecha) or die('result_insert_fecha Error:'.mysqli_error());
 
   //query para consulta de fk_cupo y fk_telefono
   $query_select_fk_fecha = "SELECT id_fecha from fechas WHERE fecha = '$fecha'";
