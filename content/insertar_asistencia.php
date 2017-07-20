@@ -38,8 +38,10 @@
 
   //query para consulta de fk_cupo y fk_telefono
   $query_select_fk_personal = "SELECT P.id_personal from cupos C, personal P WHERE P.fk_cupo = C.id_cupo and concat(C.fk_sede,C.cupo) = '$cupo'";
+
+  echo $query_select_fk_personal;
   
-  //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
+  /*//ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_fk_personal = mysqli_query($conexion, $query_select_fk_personal)) die('result_fk_personal Error:'.mysqli_error());
 
   //captura de fk_cupo mediante ciclo while
@@ -61,9 +63,7 @@
   if($asistencias == "false"){
     $query_agrega_personal = "insert into asistencias(fk_personal,fk_fecha) values ('$fk_personal','$fk_fecha')";
 
-    echo $query_agrega_personal;
-
-    /*$result_agrega_personal = mysqli_query($conexion, $query_agrega_personal) or die('result_agrega_personal Error:'.mysqli_error());*/
+    $result_agrega_personal = mysqli_query($conexion, $query_agrega_personal) or die('result_agrega_personal Error:'.mysqli_error());*/
   }
 
   /*$query_agrega_registro = "update asistencias set " . $tiempo . "='$hora' where fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
