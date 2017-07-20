@@ -23,13 +23,13 @@
   $query_insert_fecha= "insert ignore into fechas(fecha) values ('$fecha')";
 
   //ejecucion - inserccion de cupos y telefonos
-  $result = mysqli_query($conexion, $query_insert_fecha) or die('Error:'.mysqli_error());
+  $result = mysqli_query($conexion, $query_insert_fecha) or die('result Error:'.mysqli_error());
 
   //query para consulta de fk_cupo y fk_telefono
   $query_select_fk_fecha = "SELECT id_fecha from fechas WHERE fecha = '$fecha'";
   
   //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
-  if(!$result_fk_fecha = mysqli_query($conexion, $query_select_fk_fecha)) die('Error:'.mysqli_error());
+  if(!$result_fk_fecha = mysqli_query($conexion, $query_select_fk_fecha)) die('result_fk_fecha Error:'.mysqli_error());
 
   //captura de fk_cupo mediante ciclo while
   while($row = mysqli_fetch_array($result_fk_fecha)) { 
@@ -40,7 +40,7 @@
   $query_select_fk_personal = "SELECT P.id_personal from cupos C, personal P WHERE P.fk_cupo = C.id_cupo and concat(C.fk_sede,C.cupo) = '$cupo'";
   
   //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
-  if(!$result_fk_personal = mysqli_query($conexion, $query_select_fk_personal)) die('Error:'.mysqli_error());
+  if(!$result_fk_personal = mysqli_query($conexion, $query_select_fk_personal)) die('result_fk_personal Error:'.mysqli_error());
 
   //captura de fk_cupo mediante ciclo while
   while($row = mysqli_fetch_array($result_fk_personal)) { 
@@ -50,7 +50,7 @@
   $query_select_asistencia = "SELECT id_asistencias from asistencias WHERE fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
 
   //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
-  if(!$result_id_asistencia = mysqli_query($conexion, $query_select_asistencia)) die('Error:'.mysqli_error());
+  if(!$result_id_asistencia = mysqli_query($conexion, $query_select_asistencia)) die('result_id_asistencia Error:'.mysqli_error());
 
   //captura de fk_cupo mediante ciclo while
   $asistencias = "false";
@@ -60,13 +60,13 @@
 
   if($asistencias == "false"){
     $query_agrega_personal = "insert into asistencias(fk_personal,fk_fecha) values ('$fk_personal','$fk_fecha')";
-    $result_agrega_personal = mysqli_query($conexion, $query_agrega_personal) or die('Error:'.mysqli_error());
+    $result_agrega_personal = mysqli_query($conexion, $query_agrega_personal) or die('result_agrega_personal Error:'.mysqli_error());
   }
 
   $query_agrega_registro = "update asistencias set " . $tiempo . "='$hora' where fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
-  $result_agrega_registro = mysqli_query($conexion, $query_agrega_registro) or die('Error:'.mysqli_error());
+  $result_agrega_registro = mysqli_query($conexion, $query_agrega_registro) or die('result_agrega_registro Error:'.mysqli_error());
   
-  mysqli_close($conexion)or die("Error en desconeccion");
+  mysqli_close($conexion)or die("Error en desconexion");
 
   //echo "registro exitoso";
   echo "" . $tiempo . " : " . $cupo . " : " . $fecha . " : " . $hora;
