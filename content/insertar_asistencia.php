@@ -66,9 +66,9 @@
   $query_agrega_registro = "update asistencias set " . $tiempo . "='$hora' where fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
   $result_agrega_registro = mysqli_query($conexion, $query_agrega_registro) or die('Error:'.mysqli_error());
   
-  mysqli_close($conexion)or die("Error en desconeccion");*/
+  mysqli_close($conexion)or die("Error en desconeccion");
 
-  echo "registro exitoso";
+  echo "registro exitoso";*/
   echo "" . $tiempo . " : " . $cupo . " : " . $fecha . " : " . $hora;
   
 ?>
