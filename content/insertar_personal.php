@@ -1,13 +1,15 @@
 <?php
 	//se almacenan las variables a insertar
-	$sede = $_POST['sede'];
-	$cupo = $_POST['cupo'];
-	$lada = $_POST['lada'];
-	$telefono = $_POST['telefono'];
+	
 	$nombre_personal = $_POST['nombre_personal'];
 	$apellido_m = $_POST['apellido_m'];
 	$apellido_p = $_POST['apellido_p'];
 	$contrasena = $POST['contrasena'];
+	$lada = $_POST['lada'];
+	$telefono = $_POST['telefono'];
+	$sede = $_POST['sede'];
+	$cupo = $_POST['cupo'];
+	
 	
 
 	//llamar mysql-login.php que contiene los datos de la base de datos para conectar
