@@ -24,7 +24,7 @@
 
   echo $query_insert_fecha;
 
-  /*//ejecucion - inserccion de cupos y telefonos
+  //ejecucion - inserccion de cupos y telefonos
   $result_insert_fecha = mysqli_query($conexion, $query_insert_fecha) or die('result_insert_fecha Error:'.mysqli_error());
 
   //query para consulta de fk_cupo y fk_telefono
@@ -65,14 +65,14 @@
   if($asistencias == "false"){
     $query_agrega_personal = "insert into asistencias(fk_personal,fk_fecha) values ('$fk_personal','$fk_fecha')";
 
-    $result_agrega_personal = mysqli_query($conexion, $query_agrega_personal) or die('result_agrega_personal Error:'.mysqli_error());*/
+    $result_agrega_personal = mysqli_query($conexion, $query_agrega_personal) or die('result_agrega_personal Error:'.mysqli_error());
   }
 
-  /*$query_agrega_registro = "update asistencias set " . $tiempo . "='$hora' where fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
+  $query_agrega_registro = "update asistencias set " . $tiempo . "='$hora' where fk_personal = '$fk_personal' and fk_fecha = '$fk_fecha'";
 
   echo $query_agrega_registro;
 
-  $result_agrega_registro = mysqli_query($conexion, $query_agrega_registro) or die('result_agrega_registro Error:'.mysqli_error());*/
+  $result_agrega_registro = mysqli_query($conexion, $query_agrega_registro) or die('result_agrega_registro Error:'.mysqli_error());
   
   mysqli_close($conexion)or die("Error en desconexion");
 
