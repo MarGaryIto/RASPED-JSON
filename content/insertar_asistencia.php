@@ -20,11 +20,9 @@
   mysqli_set_charset($conexion, "utf8");
 
   //consultas - inserccion de cupos y telefonos
-  $query_insert_fecha= "insert into fechas(fecha) values ('$fecha')";
+  $query_insert_fecha= "insert ignore into fechas(fecha) values ('$fecha')";
 
-  echo $query_insert_fecha;
-
-  /*//ejecucion - inserccion de cupos y telefonos
+  //ejecucion - inserccion de cupos y telefonos
   $result_insert_fecha = mysqli_query($conexion, $query_insert_fecha) or die('result_insert_fecha Error:'.mysqli_error());
 
   //query para consulta de fk_cupo y fk_telefono
@@ -71,7 +69,7 @@
   
   mysqli_close($conexion)or die("Error en desconexion");
 
-  //echo "registro exitoso";
-  //echo "" . $tiempo . " : " . $cupo . " : " . $fecha . " : " . $hora;
+  echo "registro exitoso";
+  echo "" . $tiempo . " : " . $cupo . " : " . $fecha . " : " . $hora;
   
 ?>
