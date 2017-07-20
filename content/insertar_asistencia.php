@@ -31,7 +31,9 @@
   //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_fk_fecha = mysqli_query($conexion, $query_select_fk_fecha)) die('result_fk_fecha Error:'.mysqli_error());
 
-  //captura de fk_cupo mediante ciclo while
+  echo "ola k ase";
+
+  /*//captura de fk_cupo mediante ciclo while
   while($row = mysqli_fetch_array($result_fk_fecha)) { 
       $fk_fecha=$row['id_fecha'];
   }
@@ -39,9 +41,9 @@
   //query para consulta de fk_cupo y fk_telefono
   $query_select_fk_personal = "SELECT P.id_personal from cupos C, personal P WHERE P.fk_cupo = C.id_cupo and concat(C.fk_sede,C.cupo) = '$cupo'";
 
-  echo "ola k ase";
+
   
-  /*//ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
+  //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_fk_personal = mysqli_query($conexion, $query_select_fk_personal)) die('result_fk_personal Error:'.mysqli_error());
 
   //captura de fk_cupo mediante ciclo while
