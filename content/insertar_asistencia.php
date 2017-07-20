@@ -22,7 +22,9 @@
   //consultas - inserccion de cupos y telefonos
   $query_insert_fecha= "insert ignore into fechas(fecha) values ('$fecha')";
 
-  //ejecucion - inserccion de cupos y telefonos
+  echo $query_insert_fecha;
+
+  /*//ejecucion - inserccion de cupos y telefonos
   $result_insert_fecha = mysqli_query($conexion, $query_insert_fecha) or die('result_insert_fecha Error:'.mysqli_error());
 
   //query para consulta de fk_cupo y fk_telefono
@@ -31,9 +33,7 @@
   //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_fk_fecha = mysqli_query($conexion, $query_select_fk_fecha)) die('result_fk_fecha Error:'.mysqli_error());
 
-  echo "ola k ase";
-
-  /*//captura de fk_cupo mediante ciclo while
+  //captura de fk_cupo mediante ciclo while
   while($row = mysqli_fetch_array($result_fk_fecha)) { 
       $fk_fecha=$row['id_fecha'];
   }
