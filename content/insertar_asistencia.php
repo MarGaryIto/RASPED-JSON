@@ -39,7 +39,7 @@
   //query para consulta de fk_cupo y fk_telefono
   $query_select_fk_personal = "SELECT P.id_personal from cupos C, personal P WHERE P.fk_cupo = C.id_cupo and concat(C.fk_sede,C.cupo) = '$cupo'";
 
-  echo "result: " . $query_select_fk_personal;
+  echo "ola k ase";
   
   /*//ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_fk_personal = mysqli_query($conexion, $query_select_fk_personal)) die('result_fk_personal Error:'.mysqli_error());
