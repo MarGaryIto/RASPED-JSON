@@ -94,7 +94,7 @@ padding: 7px 9px;
 
 <div class="container">  
 
-<form class="form-signin" method="POST" action="">  
+<form class="form-signin" method="get" action="">  
 
   
 
