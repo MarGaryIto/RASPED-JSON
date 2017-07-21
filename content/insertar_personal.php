@@ -9,7 +9,7 @@
 	$telefono = $_POST['telefono'];
 	$sede = $_POST['sede'];
 	$cupo = $_POST['cupo'];
-	
+	$tipo_usuario = $_POST['tipo_usuario'];	
 	
 
 	//llamar mysql-login.php que contiene los datos de la base de datos para conectar
@@ -58,9 +58,9 @@
 	//query para la inserccion de usuario*/
 	$query_insert_personal = "insert into 
 	personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
-	fk_telefono,contrasena)
+	fk_telefono,contrasena,fk_usuario)
 	values('$fk_cupo','$nombre_personal','$apellido_m','$apellido_p',
-	'$fk_telefono','$contrasena')";
+	'$fk_telefono','$contrasena','$fk_usuario')";
 
 	$result = mysqli_query($conexion, $query_insert_personal) or die('Error:'.mysqli_error());
 	
