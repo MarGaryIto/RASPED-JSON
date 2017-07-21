@@ -12,7 +12,7 @@
 	
 	
 
-	//llamar mysql-login.php que contiene los datos de la base de datos para conectar
+	/*//llamar mysql-login.php que contiene los datos de la base de datos para conectar
 	require_once ('mysql-login.php');
 
 	//ejecucion de conexion o devolucion de error
@@ -55,7 +55,7 @@
 	    $fk_telefono=$row['id_telefono'];
 	}
 	
-	//query para la inserccion de usuario
+	//query para la inserccion de usuario*/
 	$query_insert_personal = "insert into 
 	personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
 	fk_telefono,contrasena)
