@@ -66,6 +66,6 @@
 	
 	mysqli_close($conexion)or die("Error en desconeccion");
 	
-	echo "true";
+	echo $query_insert_personal;
 	
 ?>
