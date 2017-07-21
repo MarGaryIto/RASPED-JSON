@@ -4,7 +4,7 @@
 	$nombre_personal = $_POST['nombre_personal'];
 	$apellido_m = $_POST['apellido_m'];
 	$apellido_p = $_POST['apellido_p'];
-	$contrasena = $POST['contrasena'];
+	$contrasena = $_POST['contrasena'];
 	$lada = $_POST['lada'];
 	$telefono = $_POST['telefono'];
 	$sede = $_POST['sede'];
@@ -36,7 +36,7 @@
 	$result = mysqli_query($conexion, $query_insert_telefono) or die('Error:'.mysqli_error());
 
 	//encriptacion md5 de contraseña
-	//$contrasena = md5($contrasena);
+	$contrasena = md5($contrasena);
 
 	//query para consulta de fk_cupo y fk_telefono
 	$query_select_fk_cupo = "SELECT id_cupo from cupos WHERE fk_sede = $sede and cupo = $cupo";
