@@ -34,7 +34,7 @@ while($row = mysqli_fetch_array($result)) {
     $hr_comida_i=$row['hr_comida_i'];
     $hr_comida_f=$row['hr_comida_f'];
     $hr_salida=$row['hr_salida'];
-    $clientes[] = array('id_personal'=> $id_personal, 'cupo'=> $cupo; 'id_asistencias'=> $id_asistencias, 'nombre_personal'=> $nombre_personal, 'apellido_m'=> $apellido_m, 'apellido_p'=> $apellido_p,
+    $clientes[] = array('id_personal'=> $id_personal, 'cupo'=> $cupo, 'id_asistencias'=> $id_asistencias, 'nombre_personal'=> $nombre_personal, 'apellido_m'=> $apellido_m, 'apellido_p'=> $apellido_p,
                         'fecha'=> $fecha, 'hr_entrada'=> $hr_entrada, 'hr_comida_i'=> $hr_comida_i, 'hr_comida_f'=> $hr_comida_f, 'hr_salida'=> $hr_salida,  );
 }
     
