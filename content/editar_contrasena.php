@@ -20,7 +20,7 @@
   $query_update_pass= "update personal set contrasena = '$contrasena' where id_personal = '$id_personal'";
 
   //ejecucion - inserccion de cupos y telefonos
-  $result_update_pass = mysqli_query($conexion, $query_update_pass) or die('result_insert_fecha Error:'.mysqli_error());
+  $result_update_pass = mysqli_query($conexion, $query_update_pass) or die('update_pass Error:'.mysqli_error());
 
   //cerrar conexion
   mysqli_close($conexion)or die("Error en desconexion");
