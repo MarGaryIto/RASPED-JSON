@@ -17,7 +17,7 @@
   mysqli_set_charset($conexion, "utf8");
 
   //consultas - inserccion de cupos y telefonos
-  $query_update_pass= "update from personal set contrasena = '$contrasena' where id_personal = '$id_personal'";
+  $query_update_pass= "update personal set contrasena = '$contrasena' where id_personal = '$id_personal'";
 
   //ejecucion - inserccion de cupos y telefonos
   $result_update_pass = mysqli_query($conexion, $query_update_pass) or die('result_insert_fecha Error:'.mysqli_error());
