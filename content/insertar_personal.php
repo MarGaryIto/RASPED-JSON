@@ -12,6 +12,7 @@
   $horario = $_POST['horario']; 
   $puesto = $_POST['puesto']; 
   $tipo = $_POST['tipo']; 
+$fk_horario = '';
   
 
   //llamar mysql-login.php que contiene los datos de la base de datos para conectar
