@@ -71,11 +71,7 @@ $fk_horario = '';
   }
   
   //query para la inserccion de usuario
-  $query_insert_personal = "insert into 
-  personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
-  fk_telefono,contrasena,fk_horario,fk_puesto,fk_usuario)
-  values('$fk_cupo','$nombre_personal','$apellido_m','$apellido_p',
-  '$fk_telefono','$contrasena','$fk_horario','$fk_puesto','$tipo')";
+  $query_insert_personal = "insert into personal(fk_cupo,nombre_personal,apellido_m,apellido_p, fk_telefono,contrasena,fk_horario,fk_puesto,fk_usuario) values('$fk_cupo','$nombre_personal','$apellido_m','$apellido_p','$fk_telefono','$contrasena','$fk_horario','$fk_puesto','$tipo')";
 
   /*$result = mysqli_query($conexion, $query_insert_personal) or die('result Error:'.mysqli_error());*/
   
