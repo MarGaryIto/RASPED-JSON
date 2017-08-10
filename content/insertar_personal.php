@@ -77,6 +77,6 @@ $fk_horario = '';
   
   mysqli_close($conexion)or die("Error en desconeccion");
   
-  echo $query_insert_personal;
+  echo 'true';
   
 ?>
