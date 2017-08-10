@@ -43,8 +43,8 @@
   //query para consulta de fk_cupo y fk_telefono
   $query_select_fk_cupo = "SELECT id_cupo from cupos WHERE fk_sede = $sede and cupo = $cupo";
   $query_select_fk_telefono = "SELECT id_telefono from telefonos WHERE fk_lada=$lada and telefono=$telefono";
-  $query_select_fk_horario = "SELECT id_horario from horarios WHERE hr_nombre=$horario";
-  $query_select_fk_puesto = "SELECT id_puesto from puestos WHERE nombre_puesto=$puesto";
+  $query_select_fk_horario = "SELECT id_horario from horarios WHERE hr_nombre='$horario'";
+  $query_select_fk_puesto = "SELECT id_puesto from puestos WHERE nombre_puesto='$puesto'";
   
   //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_fk_cupo = mysqli_query($conexion, $query_select_fk_cupo)) die('result_fk_cupo Error:'.mysqli_error());
