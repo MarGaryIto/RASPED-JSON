@@ -76,9 +76,9 @@
   values('$fk_cupo','$nombre_personal','$apellido_m','$apellido_p',
   '$fk_telefono','$contrasena','fk_horario','$fk_puesto','$tipo')";
 
-  $result = mysqli_query($conexion, $query_insert_personal) or die('result Error:'.mysqli_error());
+  /*$result = mysqli_query($conexion, $query_insert_personal) or die('result Error:'.mysqli_error());
   
-  mysqli_close($conexion)or die("Error en desconeccion");
+  mysqli_close($conexion)or die("Error en desconeccion");*/
   
   echo $query_insert_personal;
   
