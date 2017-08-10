@@ -7,12 +7,7 @@ $conexion = mysqli_connect($server, $user, $pass,$bd)
 or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
 //generamos la consulta
-$sql = "SELECT
-P.id_puesto, P.nombre_puesto,A.nombre_area
-FROM
-puestos P,areas A
-WHERE
-fk_area = id_area";
+$sql = "SELECT * from puestos";
 
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 if(!$result = mysqli_query($conexion, $sql)) die();
