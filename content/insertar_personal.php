@@ -44,7 +44,7 @@
   $query_select_fk_cupo = "SELECT id_cupo from cupos WHERE fk_sede = $sede and cupo = $cupo";
   $query_select_fk_telefono = "SELECT id_telefono from telefonos WHERE fk_lada=$lada and telefono=$telefono";
   $query_select_fk_horario = "SELECT id_horario from horarios WHERE hr_nombre='$horario'";
-  $query_select_fk_puesto = "SELECT id_puesto from puestos WHERE nombre_puesto='$puesto'";
+  /*$query_select_fk_puesto = "SELECT id_puesto from puestos WHERE nombre_puesto='$puesto'";
   
   //ejecucion de query para consulta de fk_cupo y fk_telefono o arrojo de error
   if(!$result_fk_cupo = mysqli_query($conexion, $query_select_fk_cupo)) die('result_fk_cupo Error:'.mysqli_error());
@@ -69,17 +69,17 @@
       $fk_puesto=$row['id_puesto'];
   }
   
-  //query para la inserccion de usuario*/
+  //query para la inserccion de usuario
   $query_insert_personal = "insert into 
   personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
   fk_telefono,contrasena,fk_horario,fk_puesto,fk_usuario)
   values('$fk_cupo','$nombre_personal','$apellido_m','$apellido_p',
   '$fk_telefono','$contrasena','fk_horario','$fk_puesto','$tipo')";
 
-  /*$result = mysqli_query($conexion, $query_insert_personal) or die('result Error:'.mysqli_error());
+  $result = mysqli_query($conexion, $query_insert_personal) or die('result Error:'.mysqli_error());
   
   mysqli_close($conexion)or die("Error en desconeccion");*/
   
-  echo $query_insert_personal;
+  echo $query_select_fk_horario;
   
 ?>
