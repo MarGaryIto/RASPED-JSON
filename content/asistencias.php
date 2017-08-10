@@ -12,7 +12,8 @@ F.fecha, A.hr_entrada, A.hr_comida_i, A.hr_comida_f, A.hr_salida
 from personal P, asistencias A, fechas F, cupos C
 where A.fk_personal = P.id_personal and
 A.fk_fecha = F.id_fecha and
-P.fk_cupo = C.id_cupo;";
+P.fk_cupo = C.id_cupo and
+retardo = false;";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
 //ejecución de la consulta
