@@ -15,8 +15,8 @@ from personal P, asistencias A, fechas F, cupos C
 where A.fk_personal = P.id_personal and
 A.fk_fecha = F.id_fecha and
 P.fk_cupo = C.id_cupo and
-retardo = false and
-concat(C.fk_sede,C.cupo) = '$cupo';";
+concat(C.fk_sede,C.cupo) = '$cupo' and
+retardo = false";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 /*
 //ejecución de la consulta
