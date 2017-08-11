@@ -18,7 +18,7 @@ P.fk_cupo = C.id_cupo and
 retardo = false and
 concat(C.fk_sede,C.cupo) = '$cupo';";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
-
+/*
 //ejecución de la consulta
 if(!$result = mysqli_query($conexion, $sql)) die();
 
@@ -48,5 +48,7 @@ or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
   
 //Creamos el JSON
 $json_string = json_encode($clientes);
-echo $json_string;    
+echo $json_string;  */
+
+echo $sql;
 ?>
