@@ -9,10 +9,10 @@ $conexion = mysqli_connect($server, $user, $pass,$bd)
 or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
 //generamos la consulta
-$sql = "select P.id_personal, concat(C.fk_sede,C.cupo) as cupo, A.id_asistencias, P.nombre_personal, P.apellido_m, P.apellido_p,
+$sql = "SELECT P.id_personal, concat(C.fk_sede,C.cupo) as cupo, A.id_asistencias, P.nombre_personal, P.apellido_m, P.apellido_p,
 F.fecha, A.hr_entrada, A.hr_comida_i, A.hr_comida_f, A.hr_salida
-from personal P, asistencias A, fechas F, cupos C
-where A.fk_personal = P.id_personal and
+FROM personal P, asistencias A, fechas F, cupos C
+WHERE A.fk_personal = P.id_personal and
 A.fk_fecha = F.id_fecha and
 P.fk_cupo = C.id_cupo and
 concat(C.fk_sede,C.cupo) = '$cupo' and
