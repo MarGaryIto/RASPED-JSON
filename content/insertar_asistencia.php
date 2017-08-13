@@ -68,8 +68,8 @@
 
   $result_agrega_registro = mysqli_query($conexion, $query_agrega_registro) or die('result_agrega_registro Error:'.mysqli_error());
 
-$query_update_false = "update asistencias set retardo = false where hr_entrada > '09:00:00'";
-$query_update_true = "update asistencias set retardo = true where hr_entrada < '09:00:00'";
+$query_update_false = "update asistencias set retardo = false where hr_entrada < '09:00:00'";
+$query_update_true = "update asistencias set retardo = true where hr_entrada > '09:00:00'";
 $result_false = mysqli_query($conexion, $query_update_false) or die('$result_false Error:'.mysqli_error());
 $result_true = mysqli_query($conexion, $query_update_true) or die('$result_true Error:'.mysqli_error());
   
