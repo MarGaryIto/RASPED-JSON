@@ -22,13 +22,13 @@ $contrasena = md5($contrasena);
 $query_act_cont = "update personal set contrasena = '$contrasena' where fk_telefono =
 (select id_telefono from telefonos where concat(fk_lada,telefono) = '$telefono')";
 
-echo $query_act_cont;
-
 //ejecutar la consulta de actualizacion de contraseña
-//$result_act_cont = mysqli_query($conexion, $query_act_cont) or die('result_act_cont Error:'.mysqli_error());
+$result_act_cont = mysqli_query($conexion, $query_act_cont) or die('result_act_cont Error:'.mysqli_error());
   
+//cerrar conexion
   mysqli_close($conexion)or die("Error en desconexion");
 
+//impresion de true en caso exitoso
   echo "true";
   
 ?>
