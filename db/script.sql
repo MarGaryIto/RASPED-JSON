@@ -23,17 +23,17 @@ lugar varchar(30)
 
 create table areas(
 id_area int(1) not null auto_increment primary key,
-nombre_area varchar(20)
+nombre_area varchar(20) unique
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 create table fechas(
 id_fecha int(2) not null auto_increment primary key,
-fecha date
+fecha date unique
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 create table usuarios(
 id_usuario int(1) not null auto_increment primary key,
-usuario varchar(5)
+usuario varchar(5) unique
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 /**segundo nivel**/
@@ -64,7 +64,7 @@ tolerancia time
 
 create table puestos(
 id_puesto int(2) not null auto_increment primary key,
-nombre_puesto varchar(50),
+nombre_puesto varchar(50) unique,
 fk_area int(1),
 foreign key(fk_area) references areas(id_area)
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
@@ -99,18 +99,7 @@ hr_entrada time,
 hr_comida_i time,
 hr_comida_f time,
 hr_salida time,
-foreign key (fk_personal) references personal(id_personal),
-foreign key (fk_fecha) references fechas(id_fecha)
-)ENGINE = InnoDB DEFAULT CHARSET = utf8;
-
-create table retardos(
-id_retardos int(3) not null auto_increment primary key,
-fk_personal int(2),
-fk_fecha int(2),
-hr_entrada time,
-hr_comida_i time,
-hr_comida_f time,
-hr_salida time,
+retardo boolean,
 foreign key (fk_personal) references personal(id_personal),
 foreign key (fk_fecha) references fechas(id_fecha)
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
@@ -163,7 +152,7 @@ PER.apellido_p,
 PER.apellido_m,
 TEL.fk_lada as lada,
 TEL.telefono,
-PER.contrasena,
+
 HOR.hr_nombre as horario,
 PUE.nombre_puesto as puesto,
 USU.usuario
@@ -174,6 +163,26 @@ PER.fk_horario = HOR.id_horario and
 PER.fk_puesto = PUE.id_puesto and
 PER.fk_usuario = USU.id_usuario;
 
+/* asistencias */
+select P.id_personal, concat(C.fk_sede,C.cupo) as cupo, A.id_asistencias, P.nombre_personal, P.apellido_m, P.apellido_p,
+F.fecha, A.hr_entrada, A.hr_comida_i, A.hr_comida_f, A.hr_salida
+from personal P, asistencias A, fechas F, cupos C
+where A.fk_personal = P.id_personal and
+A.fk_fecha = F.id_fecha and
+P.fk_cupo = C.id_cupo;
+
+/*retardos*/
+
+
+/*faltas*/
+select P.id_personal, concat(C.fk_sede,C.cupo) as cupo, I.id_falta, P.nombre_personal, P.apellido_m, P.apellido_p, F.fecha
+from personal P, faltas I, fechas F, cupos C
+where I.fk_personal = P.id_personal and
+I.fk_fecha = F.id_fecha and
+P.fk_cupo = C.id_cupo;
+
+select 
+
 /*todos los puestos*/
 SELECT
 P.id_puesto, P.nombre_puesto,A.nombre_area
@@ -181,6 +190,13 @@ FROM
 puestos P,areas A
 WHERE
 fk_area = id_area;
+
+/* buscar personal por telefono y contraseña */
+select P.id_personal, concat(T.fk_lada,T.telefono) as telefono, P.contrasena
+from personal P, telefonos T
+where P.fk_telefono = T.id_telefono and
+$telefono = concat(T.fk_lada,T.telefono) and
+$contraena = P.contraena;
 
 /*insertar usuario*/
 
@@ -203,4 +219,15 @@ personal(fk_cupo,nombre_personal,apellido_m,apellido_p,
 	fk_telefono,contrasena,fk_horario,fk_puesto,fk_usuario)
 values
 ('fk_cupo','nombre_personal','apellido_m','apellido_p',
-´'fk_telefono','contrasena'´,'fk_horario','fk_puesto','fk_usuario')
+´'fk_telefono','contrasena'´,'fk_horario','fk_puesto','fk_usuario');
+
+
+
+select P.id_personal, concat(C.fk_sede,C.cupo) as cupo, A.id_asistencias, P.nombre_personal, P.apellido_m, P.apellido_p,
+F.fecha, A.hr_entrada, A.hr_comida_i, A.hr_comida_f, A.hr_salida
+from personal P, asistencias A, fechas F, cupos C
+where A.fk_personal = P.id_personal and
+A.fk_fecha = F.id_fecha and
+P.fk_cupo = C.id_cupo and
+retardo = false and
+concat(C.fk_sede,C.cupo) =;
