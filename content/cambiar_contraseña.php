@@ -33,8 +33,10 @@ $contrasena = md5($contrasena);
 //consulta actualizacion de contraseña
 $query_act_cont = "update personal set contrsena = '$contrasena' where fk_cupo = '$id_cupo'";
 
+echo $query_act_cont;
+
 //ejecutar la consulta de actualizacion de contraseña
-$result_act_cont = mysqli_query($conexion, $query_act_cont) or die('result_act_cont Error:'.mysqli_error());
+//$result_act_cont = mysqli_query($conexion, $query_act_cont) or die('result_act_cont Error:'.mysqli_error());
   
   mysqli_close($conexion)or die("Error en desconexion");
 
