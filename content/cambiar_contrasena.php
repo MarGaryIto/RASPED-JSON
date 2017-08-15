@@ -1,6 +1,6 @@
 <?php
   //se almacenan las variables a insertar
-  $cupo = $_POST['cupo'];
+  $telefono = $_POST['telefono'];
   $contrasena = $_POST['contrasena'];
 
   //llamar mysql-login.php que contiene los datos de la base de datos para conectar
@@ -19,8 +19,8 @@
 $contrasena = md5($contrasena);
 
 //consulta actualizacion de contraseña
-$query_act_cont = "update personal set contrasena = '$contrasena' where fk_cupo =
-(select id_cupo from cupos where concat(fk_sede,cupo) = '$cupo')";
+$query_act_cont = "update personal set contrasena = '$contrasena' where fk_telefono =
+(select id_telefono from telefonos where concat(fk_lada,telefono) = '$telefono')";
 
 echo $query_act_cont;
 
