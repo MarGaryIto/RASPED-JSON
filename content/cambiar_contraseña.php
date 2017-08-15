@@ -1,6 +1,6 @@
 <?php
   //se almacenan las variables a insertar
-  $cupo = $_POST['cupo'];
+  $cupo = 132087;
   $contrasena = $_POST['contrasena'];
 
   //llamar mysql-login.php que contiene los datos de la base de datos para conectar
