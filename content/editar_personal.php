@@ -26,8 +26,8 @@
   mysqli_set_charset($conexion, "utf8");
 
   //consultas - inserccion de cupos y telefonos
-  $query_up_per = "update personal set nombre_personal = '$nombre_personal',apellido_p = '$apellido_m', apellido_m = '$apellido_m' where fk_cupo = 
-  (select id_cupo from cupos where fk_sede = '$sede' and cupo = '$cupo'";
+  $query_up_per = "update personal set nombre_personal = '$nombre_personal', apellido_p = '$apellido_p', apellido_m = '$apellido_m' where fk_cupo = 
+  (select id_cupo from cupos where fk_sede = '$sede' and cupo = '$cupo')";
 
 echo $query_up_per;
   //ejecucion - inserccion de cupos y telefonos
