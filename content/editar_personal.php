@@ -29,12 +29,13 @@
   $query_up_per = "update personal set nombre_personal = '$nombre_personal',apellido_p = '$apellido_m', apellido_m = '$apellido_m' where fk_cupo = 
   (select id_cupo from cupos where fk_sede = '$sede' and cupo = '$cupo'";
 
+echo $query_up_per;
   //ejecucion - inserccion de cupos y telefonos
-  $result_up_per = mysqli_query($conexion, $query_up_per) or die('$result_up_per Error:'.mysqli_error());
+  //$result_up_per = mysqli_query($conexion, $query_up_per) or die('$result_up_per Error:'.mysqli_error());
 
   
   mysqli_close($conexion)or die("Error en desconexion");
   
-  echo 'true';
+  //echo 'true';
   
 ?>
