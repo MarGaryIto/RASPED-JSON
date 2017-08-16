@@ -20,15 +20,17 @@
   //estándar de codificación Unicode Transformation 8 bits para compatibilidad ASCII
   mysqli_set_charset($conexion, "utf8");
 
-  //consultas - inserccion de cupos y telefonos
+  //query para la inserccion de horario
   $query_insert = "insert ignore into horarios(hr_nombre,hr_entrada,hr_comida_i,hr_comida_f,hr_salida,tolerancia)
   values ('$hr_nombre','$hr_entrada','$hr_comida_i','$hr_comida_f','$hr_salida','$tolerancia')";
 
-  //ejecucion - inserccion de cupos y telefonos
+  //del query inserccion horario o devolución de error en caso de
   $result_insert = mysqli_query($conexion, $query_insert) or die('result_insert Error:'.mysqli_error());
   
+  //cierre de conexion
   mysqli_close($conexion)or die("Error en desconexion");
 
+  //si todo se ejecuto exitosamente, se devuelve un verdadero (true)
   echo "true";
   
 ?>
